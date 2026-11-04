@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" style="--mx: 621px; --my: 641px;"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="TechnoXian World Cup 10.0 Fastest Line Follower — Sri Lankan student robotics team portfolio.">
+<title>TX10 • Fastest Line Follower</title>
+<style>
+:root{
+ --bg:#050812;--bg2:#09101e;--panel:#0c1526;--panel2:#111d32;--text:#edf6ff;
+ --muted:#93a7c2;--accent:#32d7ff;--accent2:#667cff;--line:#1b3150;
+ --shadow:0 18px 60px #0007;--nav:rgba(5,8,18,.78)
+}
+[data-theme="light"]{
+ --bg:#f4f8fc;--bg2:#eaf1f8;--panel:#fff;--panel2:#f4f8fc;--text:#101a2a;
+ --muted:#5b6c82;--accent:#087fa4;--accent2:#4359cf;--line:#d5e0ec;
+ --shadow:0 18px 45px #19304d18;--nav:rgba(255,255,255,.82)
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 85% 4%,#194a7a 0,transparent 32%),radial-gradient(circle at 8% 85%,#1c3a6e33 0,transparent 40%),var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;transition:.25s}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px);background-size:45px 45px;mask-image:linear-gradient(to bottom,black,transparent 80%);z-index:-1}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.divider{height:1px;max-width:1250px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--line) 20%,var(--line) 80%,transparent)}
+.section-kicker{position:relative;padding-left:22px}
+.section-kicker:before{content:"";position:absolute;left:0;top:50%;width:14px;height:2px;background:var(--accent);transform:translateY(-50%)}
+a{color:inherit;text-decoration:none}
+button,select{font:inherit}
+nav{position:sticky;top:0;z-index:50;background:var(--nav);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:13px 5%;gap:20px}
+.logo{font-weight:900;letter-spacing:1px;white-space:nowrap}.logo b{color:var(--accent)}
+.links{display:flex;gap:20px;color:var(--muted);font-size:13px}.links a:hover{color:var(--accent)}
+.controls{display:flex;gap:8px;align-items:center}
+.control{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 10px;cursor:pointer}
+.hero{min-height:88vh;display:grid;place-items:center;padding:75px 6%;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,#32d7ff14,transparent 60%);pointer-events:none}
+.hero-content{max-width:1050px;text-align:center;position:relative}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid #287397;background:var(--panel);color:var(--accent);padding:8px 14px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:1px;animation:pulseGlow 2.6s ease-in-out infinite}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 0 #32d7ff00}50%{box-shadow:0 0 22px #32d7ff33}}
+h1{font-size:clamp(48px,8vw,96px);line-height:.91;margin:24px 0 20px;letter-spacing:-4px}
+.gradient{background:linear-gradient(90deg,var(--text),var(--accent),#7c8dff);-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.hero p{font-size:18px;color:var(--muted);max-width:720px;margin:0 auto 28px;line-height:1.65}
+.cta{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;background:linear-gradient(135deg,var(--accent2),var(--accent));color:white;font-weight:800;margin:5px;box-shadow:0 12px 35px #2d8fff26;transition:transform .2s ease,box-shadow .2s ease}
+.cta:hover{transform:translateY(-2px);box-shadow:0 16px 42px #2d8fff3d}
+.cta:nth-of-type(2){background:transparent;border:1px solid var(--line);color:var(--text);box-shadow:none}
+.cta:nth-of-type(2):hover{border-color:var(--accent);color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);max-width:800px;margin:45px auto 0;border:1px solid var(--line);background:var(--panel);border-radius:18px;overflow:hidden}
+.stat{padding:18px;border-right:1px solid var(--line);transition:background .2s}.stat:hover{background:var(--panel2)}.stat:last-child{border:0}.stat b{font-size:23px;color:var(--accent)}.stat small{display:block;color:var(--muted);margin-top:4px;font-size:12px;letter-spacing:.3px}
+section{padding:82px 6%;max-width:1250px;margin:auto}
+.section-kicker{color:var(--accent);font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
+.section-title{font-size:36px;margin:8px 0}.section-sub{color:var(--muted);line-height:1.6;margin-bottom:32px;max-width:620px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:18px}
+.card{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:19px;padding:23px;box-shadow:var(--shadow);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.card:hover{transform:translateY(-4px);border-color:#34779a;box-shadow:0 22px 50px #0009}
+.member{min-height:155px}.avatar{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:#0d2b43;border:1px solid #285a76;font-size:23px;transition:transform .25s}.card:hover .avatar{transform:scale(1.08) rotate(-4deg)}.role{color:var(--accent);font-size:12px;font-weight:700}
+.robot{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}.placeholder{min-height:210px;border:1px dashed #3b5b79;border-radius:15px;display:grid;place-items:center;text-align:center;color:var(--muted);background:#081120;transition:border-color .2s}.placeholder:hover{border-color:var(--accent)}
+.spec{display:grid;grid-template-columns:1fr 1fr;gap:9px}.spec div{padding:13px;background:var(--bg2);border:1px solid var(--line);border-radius:11px;transition:border-color .2s}.spec div:hover{border-color:#34779a}.spec b{display:block;font-size:11px;color:var(--muted);margin-bottom:4px}
+.tech-icon{font-size:29px}.card p{color:var(--muted);line-height:1.6}
+.timeline{border-left:2px solid #2c5874;padding-left:26px}.step{margin:0 0 25px;position:relative}.step:before{content:"";width:10px;height:10px;background:var(--accent);border-radius:50%;position:absolute;left:-32px;top:6px;box-shadow:0 0 15px var(--accent)}
+.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:13px;border-bottom:1px solid var(--line);text-align:left}.table th{color:var(--accent);font-size:12px;letter-spacing:.5px;text-transform:uppercase}.table tr:hover td{background:#ffffff05}
+.checklist{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}.check{padding:12px;border:1px solid var(--line);border-radius:11px;background:var(--panel);color:var(--muted);transition:border-color .2s,color .2s}.check:hover{border-color:var(--accent);color:var(--text)}
+footer{text-align:center;border-top:1px solid var(--line);padding:44px 20px;color:var(--muted);font-size:13px}
+footer strong{color:var(--text);letter-spacing:1px}
+.mobile-menu{display:none}
+[dir="rtl"]{direction:rtl}
+#progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--accent));z-index:100;width:0%;transition:width .1s linear}
+#cursorGlow{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(600px circle at var(--mx,50%) var(--my,50%),#32d7ff14,transparent 70%);transition:opacity .3s}
+.card{position:relative;isolation:isolate}
+.card:before{content:"";position:absolute;inset:0;border-radius:19px;background:radial-gradient(220px circle at var(--cx,50%) var(--cy,50%),#32d7ff22,transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:-1}
+.card:hover:before{opacity:1}
+.card:after{content:"";position:absolute;inset:0;border-radius:19px;pointer-events:none;opacity:0;transition:opacity .25s;
+ background:
+  linear-gradient(var(--accent),var(--accent)) top left/12px 2px no-repeat,
+  linear-gradient(var(--accent),var(--accent)) top left/2px 12px no-repeat,
+  linear-gradient(var(--accent),var(--accent)) top right/12px 2px no-repeat,
+  linear-gradient(var(--accent),var(--accent)) top right/2px 12px no-repeat,
+  linear-gradient(var(--accent),var(--accent)) bottom left/12px 2px no-repeat,
+  linear-gradient(var(--accent),var(--accent)) bottom left/2px 12px no-repeat,
+  linear-gradient(var(--accent),var(--accent)) bottom right/12px 2px no-repeat,
+  linear-gradient(var(--accent),var(--accent)) bottom right/2px 12px no-repeat;
+}
+.card:hover:after{opacity:.85}
+.status{display:inline-flex;align-items:center;gap:6px;font-family:"SF Mono",Consolas,monospace;font-size:11px;color:var(--muted);letter-spacing:.5px}
+.status i{width:7px;height:7px;border-radius:50%;background:#3ee87a;box-shadow:0 0 8px #3ee87a;animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+#boot{position:fixed;inset:0;z-index:999;background:#050812;color:#32d7ff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:"SF Mono",Consolas,monospace;transition:opacity .5s ease,visibility .5s}
+#boot.hide{opacity:0;visibility:hidden;pointer-events:none}
+#boot .logo-boot{font-size:15px;letter-spacing:4px;margin-bottom:18px;opacity:.85}
+#boot .bar{width:220px;height:3px;background:#111d32;border-radius:3px;overflow:hidden}
+#boot .bar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,#667cff,#32d7ff);transition:width .1s linear}
+#boot .line{font-size:11px;color:#5a7ca0;margin-top:14px;min-height:14px}
+#boot .line:after{content:"▍";animation:blink 1s step-start infinite}
+body.dev-mode .editable{outline:1.5px dashed var(--accent);outline-offset:3px;border-radius:4px;cursor:text}
+body.dev-mode .editable:focus{outline:2px solid var(--accent);background:#32d7ff14}
+#devBanner{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:var(--panel);border:1px solid var(--accent);color:var(--text);padding:10px 18px;border-radius:12px;font-size:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center;z-index:200;box-shadow:0 10px 30px #0008;font-family:"SF Mono",Consolas,monospace;max-width:92vw}
+#devBanner button{background:var(--accent);border:none;color:#04202b;padding:6px 11px;border-radius:8px;font-weight:700;cursor:pointer;font-size:11px;white-space:nowrap}
+#devBanner #devExit{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.hidden{display:none!important}
+.media-slot{position:relative;overflow:hidden}
+.media-slot img,.media-slot video{width:100%;height:100%;object-fit:cover;border-radius:15px;position:absolute;inset:0}
+.media-slot iframe{width:100%;height:100%;border:0;border-radius:15px;position:absolute;inset:0}
+body.dev-mode .media-slot{cursor:pointer}
+body.dev-mode .media-slot:hover{outline:2px dashed var(--accent);outline-offset:2px}
+.media-remove{position:absolute;top:6px;right:6px;background:#000000cc;color:#fff;border:none;border-radius:50%;width:22px;height:22px;font-size:12px;cursor:pointer;z-index:2;display:none}
+body.dev-mode .media-slot:hover .media-remove{display:block}
+#pwModal{position:fixed;inset:0;z-index:300;background:#000000a8;display:flex;align-items:center;justify-content:center}
+#pwModal .card{max-width:270px;text-align:center}
+#pwInput{width:100%;box-sizing:border-box;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg2);color:var(--text);font-family:"SF Mono",Consolas,monospace;text-align:center;margin:12px 0;font-size:15px;letter-spacing:2px}
+.links a.active{color:var(--accent)}
+.hero-track{position:absolute;inset:0;pointer-events:none;opacity:.55}
+.hero-track path{fill:none;stroke:var(--line);stroke-width:2;stroke-dasharray:6 6}
+.hero-track circle{filter:drop-shadow(0 0 6px var(--accent))}
+@media(max-width:900px){.links{display:none}.mobile-menu{display:block}.stats{grid-template-columns:1fr 1fr}.robot{grid-template-columns:1fr}.status-text{display:none}}
+@media(max-width:520px){nav{padding:11px 4%}.hero{min-height:82vh;padding:60px 5%}h1{letter-spacing:-2px}.stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}section{padding:62px 5%}.spec{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="">
+<div id="boot" class="hide">
+  <div class="logo-boot">TX10 // FLF</div>
+  <div class="bar"><i id="bootBar" style="width: 100%;"></i></div>
+  <div class="line" id="bootLine">LINE ACQUIRED.</div>
+</div>
+<div id="progress" style="width: 14.7519%;"></div>
+<div id="cursorGlow"></div>
+<nav>
+  <a class="logo" href="#home">TX10<span>•</span><b>FLF</b></a>
+  <div class="links">
+    <a href="#team" data-i18n="navTeam" class="active">Team</a>
+    <a href="#robot" data-i18n="navRobot" class="">Robot</a>
+    <a href="#tech" data-i18n="navTech" class="">Technology</a>
+    <a href="#build" data-i18n="navBuild" class="">Build</a>
+    <a href="#testing" data-i18n="navTesting" class="">Testing</a>
+    <a href="#competition" data-i18n="navCompetition" class="">Competition</a>
+  </div>
+  <div class="controls">
+    <span class="status"><i></i><span class="status-text">SYSTEM ONLINE</span></span>
+    <select id="language" class="control" aria-label="Language">
+      <option value="en">English</option>
+      <option value="ta">தமிழ்</option>
+    </select>
+    <button id="theme" class="control" title="Toggle theme">☀️</button>
+    <button id="mobile" class="control mobile-menu">☰</button>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+<svg class="hero-track" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice">
+  <path id="heroPath" d="M -50 380 C 150 380 150 200 300 200 S 450 380 600 380 S 750 120 900 120 S 1050 300 1150 300"></path>
+  <g id="heroCar">
+    <ellipse cx="0" cy="7" rx="15" ry="4" fill="#000" opacity=".25"></ellipse>
+    <rect x="-13" y="-6" width="26" height="12" rx="4" fill="#0c1526" stroke="#32d7ff" stroke-width="1.4"></rect>
+    <rect x="-7" y="-9" width="12" height="6" rx="2" fill="#0c1526" stroke="#32d7ff" stroke-width="1.2"></rect>
+    <circle cx="-8" cy="6" r="3.4" fill="#111d32" stroke="#667cff" stroke-width="1"></circle>
+    <circle cx="8" cy="6" r="3.4" fill="#111d32" stroke="#667cff" stroke-width="1"></circle>
+    <circle cx="14" cy="0" r="1.6" fill="#32d7ff"><animate attributeName="opacity" values="1;.3;1" dur="0.6s" repeatCount="indefinite"></animate></circle>
+    <animateMotion dur="7s" repeatCount="indefinite" rotate="auto">
+      <mpath href="#heroPath"></mpath>
+    </animateMotion>
+  </g>
+</svg>
+<div class="hero-content">
+  <div class="badge">⚡ <span data-i18n="badge">TECHNOXIAN WORLD CUP 10.0 • 2027</span></div>
+  <h1><span data-i18n="fastest">FASTEST</span><br><span class="gradient" data-i18n="lineFollower">LINE FOLLOWER</span></h1>
+  <p data-i18n="heroText">Eight students from Sri Lanka building, testing and improving an autonomous racing robot for TechnoXian World Cup 10.0.</p>
+  <a class="cta" href="#team" data-i18n="meet">Meet the Team →</a>
+  <a class="cta" href="#robot" data-i18n="explore">Explore the Robot</a>
+  <div class="stats">
+    <div class="stat"><b class="count" data-target="8">8</b><small data-i18n="members">Members</small></div>
+    <div class="stat"><b class="count" data-target="1">1</b><small data-i18n="robotStat">Robot</small></div>
+    <div class="stat"><b>PID</b><small data-i18n="controlStat">Control</small></div>
+    <div class="stat"><b class="count" data-target="2027">2027</b><small data-i18n="eventStat">World Cup</small></div>
+  </div>
+</div>
+</header>
+
+<section id="team" class="reveal in">
+  <div class="section-kicker" data-i18n="kTeam">THE PEOPLE</div>
+  <h2 class="section-title" data-i18n="ourTeam">Our Team</h2>
+  <p class="section-sub" data-i18n="teamSub">Eight members working together. Roles will be assigned by the team and can be updated here later.</p>
+  <div class="grid">
+    <div class="card member" style="--cx: 206.453125px; --cy: 134.71875px;"><div class="avatar">👨‍🔧</div><h3>Rithakza</h3><div class="role editable" data-key="role1" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
+    <div class="card member" style="--cx: 58.984375px; --cy: 162.71875px;"><div class="avatar">👨‍💻</div><h3>Sharukshan</h3><div class="role editable" data-key="role2" data-i18n="roleOpen" contenteditable="false">Leader</div></div>
+    <div class="card member" style="--cx: 65.5px; --cy: 72.71875px;"><div class="avatar">👨‍💻</div><h3>Jerushan</h3><div class="role editable" data-key="role3" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
+    <div class="card member"><div class="avatar">👨‍🔧</div><h3>Shajan</h3><div class="role editable" data-key="role4" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
+    <div class="card member"><div class="avatar">👨‍🔬</div><h3>Jathuragavan</h3><div class="role editable" data-key="role5" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
+    <div class="card member" style="--cx: 180.984375px; --cy: 117.28125px;"><div class="avatar">👨‍💻</div><h3>Piravin</h3><div class="role editable" data-key="role6" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
+    <div class="card member"><div class="avatar">👩‍🎨</div><h3>Delza</h3><div class="role editable" data-key="role7" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
+    <div class="card member"><div class="avatar">👩‍🔬</div><h3>Pirarthana</h3><div class="role editable" data-key="role8" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section id="robot" class="reveal in">
+  <div class="section-kicker" data-i18n="kRobot">THE MACHINE</div>
+  <h2 class="section-title" data-i18n="ourRobot">Our Robot</h2>
+  <p class="section-sub" data-i18n="robotSub">Technical specifications will be filled in after the final design is selected.</p>
+  <div class="robot">
+    <div class="card" style="--cx: 410.453125px; --cy: 87.25px;"><div class="placeholder media-slot" data-key="robotPhoto" data-type="image"><span class="media-inner">🤖<br><span data-i18n="photo">FINAL ROBOT PHOTO</span></span></div><h3 class="editable" data-key="robotName" contenteditable="false">[Robot Name]</h3><p data-i18n="robotDesc">An autonomous line follower designed for accurate, high-speed tracking.</p></div>
+    <div class="card" style="--cx: 276.859375px; --cy: 45.289459228515625px;"><h3 data-i18n="specs">Specifications</h3><div class="spec">
+      <div><b>Controller</b><span class="editable" data-key="specController" contenteditable="false">ESP32 / [Model]</span></div><div><b>Sensor Array</b><span class="editable" data-key="specSensor" contenteditable="false">[Number / Model]</span></div>
+      <div><b>Motors</b><span class="editable" data-key="specMotors" contenteditable="false">[Model]</span></div><div><b>Motor Driver</b><span class="editable" data-key="specDriver" contenteditable="false">[Model]</span></div>
+      <div><b>Battery</b><span class="editable" data-key="specBattery" contenteditable="false">[Type / Voltage]</span></div><div><b>Dimensions</b><span class="editable" data-key="specDims" contenteditable="false">[L × W × H]</span></div>
+      <div><b>Weight</b><span class="editable" data-key="specWeight" contenteditable="false">[___ g]</span></div><div><b>Algorithm</b>PID</div>
+    </div></div>
+  </div>
+</section>
+
+<section id="tech" class="reveal in">
+  <div class="section-kicker" data-i18n="kTech">THE ENGINEERING</div>
+  <h2 class="section-title" data-i18n="technology">Technology</h2>
+  <p class="section-sub" data-i18n="techSub">Sensing, embedded programming and feedback control working as one system.</p>
+  <div class="grid">
+    <div class="card"><div class="tech-icon">👁️</div><h3 data-i18n="sensing">Line Sensing</h3><p data-i18n="sensingP">Infrared sensors detect the position of the track and provide real-time feedback.</p></div>
+    <div class="card"><div class="tech-icon">🧠</div><h3 data-i18n="pid">PID Control</h3><p data-i18n="pidP">PID converts line-position error into steering correction for smoother tracking.</p></div>
+    <div class="card"><div class="tech-icon">⚡</div><h3 data-i18n="motor">Motor Control</h3><p data-i18n="motorP">The controller adjusts left and right wheel speed through the motor driver.</p></div>
+    <div class="card"><div class="tech-icon">🔧</div><h3 data-i18n="calibration">Calibration</h3><p data-i18n="calP">Sensor thresholds and PID parameters are tuned through practical testing.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+<section id="build" class="reveal in">
+  <div class="section-kicker" data-i18n="kBuild">THE JOURNEY</div>
+  <h2 class="section-title" data-i18n="buildTitle">Build Journey</h2>
+  <p class="section-sub" data-i18n="buildSub">From first idea to competition-ready robot.</p>
+  <div class="timeline">
+    <div class="step"><h3>01 — <span data-i18n="concept">Concept</span></h3><p data-i18n="conceptP">Research the competition, track requirements and robot architecture.</p></div>
+    <div class="step"><h3>02 — <span data-i18n="prototype">Prototype</span></h3><p data-i18n="prototypeP">Build the chassis, connect sensors and motors, and establish basic line following.</p></div>
+    <div class="step"><h3>03 — <span data-i18n="control">Control</span></h3><p data-i18n="controlP">Implement and tune PID control for stable tracking.</p></div>
+    <div class="step"><h3>04 — <span data-i18n="testingWord">Testing</span></h3><p data-i18n="testingP">Run repeated tests on straight lines, corners and curves.</p></div>
+    <div class="step"><h3>05 — <span data-i18n="optimization">Optimization</span></h3><p data-i18n="optimizationP">Improve traction, speed, weight distribution and software.</p></div>
+    <div class="step"><h3>06 — <span data-i18n="competitionWord">Competition</span></h3><p data-i18n="competitionP">Final inspection, practice and preparation for TechnoXian World Cup 10.0.</p></div>
+  </div>
+</section>
+
+<section id="testing" class="reveal in">
+  <div class="section-kicker" data-i18n="kTesting">THE DATA</div>
+  <h2 class="section-title" data-i18n="testingTitle">Testing &amp; Results</h2>
+  <p class="section-sub" data-i18n="testingSub">Add real measurements as your robot improves. Never replace them with guessed results.</p>
+  <div class="card table-wrap"><table class="table">
+    <thead><tr><th data-i18n="run">Run</th><th data-i18n="time">Time</th><th data-i18n="errors">Errors</th><th data-i18n="result">Result</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="editable" data-key="t1time" contenteditable="false">[___ s]</td><td class="editable" data-key="t1err" contenteditable="false">[___]</td><td class="editable" data-key="t1res" contenteditable="false">[Success / Improve]</td></tr>
+      <tr><td>2</td><td class="editable" data-key="t2time" contenteditable="false">[___ s]</td><td class="editable" data-key="t2err" contenteditable="false">[___]</td><td class="editable" data-key="t2res" contenteditable="false">[Success / Improve]</td></tr>
+      <tr><td>3</td><td class="editable" data-key="t3time" contenteditable="false">[___ s]</td><td class="editable" data-key="t3err" contenteditable="false">[___]</td><td class="editable" data-key="t3res" contenteditable="false">[Success / Improve]</td></tr>
+      <tr><td>4</td><td class="editable" data-key="t4time" contenteditable="false">[___ s]</td><td class="editable" data-key="t4err" contenteditable="false">[___]</td><td class="editable" data-key="t4res" contenteditable="false">[Success / Improve]</td></tr>
+      <tr><td>5</td><td class="editable" data-key="t5time" contenteditable="false">[___ s]</td><td class="editable" data-key="t5err" contenteditable="false">[___]</td><td class="editable" data-key="t5res" contenteditable="false">[Success / Improve]</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<div class="divider"></div>
+<section id="competition" class="reveal in">
+  <div class="section-kicker" data-i18n="kComp">THE EVENT</div>
+  <h2 class="section-title">TechnoXian World Cup 10.0</h2>
+  <p class="section-sub" data-i18n="compSub">Fastest Line Follower • Sri Lanka 🇱🇰</p>
+  <div class="grid">
+    <div class="card"><div class="tech-icon">📅</div><h3>30 January 2027</h3><p data-i18n="dateP">Competition start date.</p></div>
+    <div class="card"><div class="tech-icon">🇲🇾</div><h3>Malaysia</h3><p data-i18n="malaysiaP">World Cup 10.0 location.</p></div>
+    <div class="card"><div class="tech-icon">🏁</div><h3 data-i18n="goal">Goal</h3><p data-i18n="goalP">Complete the course autonomously with accurate and competitive performance.</p></div>
+  </div>
+  <div class="card" id="countdownCard" style="margin-top: 18px; text-align: center; cursor: pointer; --cx: 503.453125px; --cy: 84.6875px;">
+    <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px" data-i18n="countdown">Countdown to Malaysia</div>
+    <div id="cd" style="display:flex;justify-content:center;gap:22px;font-weight:800;font-size:26px">
+      <div><span id="cd-d">88</span><div style="font-size:11px;color:var(--muted);font-weight:600">DAYS</div></div>
+      <div><span id="cd-h">10</span><div style="font-size:11px;color:var(--muted);font-weight:600">HRS</div></div>
+      <div><span id="cd-m">58</span><div style="font-size:11px;color:var(--muted);font-weight:600">MIN</div></div>
+      <div><span id="cd-s">55</span><div style="font-size:11px;color:var(--muted);font-weight:600">SEC</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="reveal in">
+  <div class="section-kicker" data-i18n="kPrep">READY CHECK</div>
+  <h2 class="section-title" data-i18n="prep">Competition Preparation</h2>
+  <div class="checklist">
+    <div class="check">☐ Robot</div><div class="check">☐ Spare motors</div><div class="check">☐ Spare sensors</div>
+    <div class="check">☐ Batteries</div><div class="check">☐ Charger</div><div class="check">☐ USB cables</div>
+    <div class="check">☐ Laptop</div><div class="check">☐ Final firmware</div><div class="check">☐ PID values</div>
+    <div class="check">☐ Circuit diagram</div><div class="check">☐ Team video</div><div class="check">☐ Documentation</div>
+  </div>
+</section>
+
+<section class="reveal in">
+  <div class="section-kicker">MEDIA</div><h2 class="section-title" data-i18n="media">Build Media</h2>
+  <p class="section-sub" data-i18n="mediaSub">Add your real project photos and demonstration videos here.</p>
+  <div class="grid"><div class="placeholder media-slot" data-key="buildPhoto" data-type="image"><span class="media-inner">📸<br>Build Photo</span></div><div class="placeholder media-slot" data-key="robotPhoto2" data-type="image"><span class="media-inner">📸<br>Robot Photo</span></div><div class="placeholder media-slot" data-key="testVideo" data-type="video"><span class="media-inner">🎥<br>Test Video</span></div></div>
+</section>
+
+<footer>
+  <strong>TECHNOXIAN WORLD CUP 10.0</strong><br>
+  Fastest Line Follower • Sri Lanka 🇱🇰<br><br>
+  <span data-i18n="footer">Built by our team • 2026–2027</span>
+</footer>
+
+<div id="devBanner" class="hidden">🛠 DEV MODE — click dashed text to edit, click a photo/video box to upload or link.<button id="devExport">💾 Export Site</button><button id="devExit">Exit</button></div>
+
+<div id="pwModal" class="hidden">
+  <div class="card" style="--cx: 107.5px; --cy: 60.5px;">
+    <div style="font-family:'SF Mono',Consolas,monospace;font-size:12px;color:var(--muted)">🔒 DEVELOPER ACCESS</div>
+    <input id="pwInput" type="password" placeholder="••••" inputmode="numeric" maxlength="8">
+    <div style="display:flex;gap:8px;justify-content:center">
+      <button id="pwSubmit" class="cta" style="margin:0;padding:8px 16px;font-size:13px">Unlock</button>
+      <button id="pwCancel" style="padding:8px 16px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:13px;cursor:pointer">Cancel</button>
+    </div>
+    <div id="pwError" style="color:#ff6b6b;font-size:11px;margin-top:8px;min-height:14px">Incorrect password</div>
+  </div>
+</div>
+<input type="file" id="mediaFileInput" accept="image/*" class="hidden">
+
+<script>
+const dict={
+en:{
+navTeam:"Team",navRobot:"Robot",navTech:"Technology",navBuild:"Build",navTesting:"Testing",navCompetition:"Competition",
+badge:"TECHNOXIAN WORLD CUP 10.0 • 2027",fastest:"FASTEST",lineFollower:"LINE FOLLOWER",
+heroText:"Eight students from Sri Lanka building, testing and improving an autonomous racing robot for TechnoXian World Cup 10.0.",
+meet:"Meet the Team →",explore:"Explore the Robot",members:"Members",robotStat:"Robot",controlStat:"Control",eventStat:"World Cup",
+kTeam:"THE PEOPLE",ourTeam:"Our Team",teamSub:"Eight members working together. Roles will be assigned by the team and can be updated here later.",roleOpen:"Role — To be assigned",
+kRobot:"THE MACHINE",ourRobot:"Our Robot",robotSub:"Technical specifications will be filled in after the final design is selected.",photo:"FINAL ROBOT PHOTO",robotDesc:"An autonomous line follower designed for accurate, high-speed tracking.",specs:"Specifications",
+kTech:"THE ENGINEERING",technology:"Technology",techSub:"Sensing, embedded programming and feedback control working as one system.",sensing:"Line Sensing",sensingP:"Infrared sensors detect the position of the track and provide real-time feedback.",pid:"PID Control",pidP:"PID converts line-position error into steering correction for smoother tracking.",motor:"Motor Control",motorP:"The controller adjusts left and right wheel speed through the motor driver.",calibration:"Calibration",calP:"Sensor thresholds and PID parameters are tuned through practical testing.",
+kBuild:"THE JOURNEY",buildTitle:"Build Journey",buildSub:"From first idea to competition-ready robot.",concept:"Concept",conceptP:"Research the competition, track requirements and robot architecture.",prototype:"Prototype",prototypeP:"Build the chassis, connect sensors and motors, and establish basic line following.",control:"Control",controlP:"Implement and tune PID control for stable tracking.",testingWord:"Testing",testingP:"Run repeated tests on straight lines, corners and curves.",optimization:"Optimization",optimizationP:"Improve traction, speed, weight distribution and software.",competitionWord:"Competition",competitionP:"Final inspection, practice and preparation for TechnoXian World Cup 10.0.",
+kTesting:"THE DATA",testingTitle:"Testing & Results",testingSub:"Add real measurements as your robot improves. Never replace them with guessed results.",run:"Run",time:"Time",errors:"Errors",result:"Result",
+kComp:"THE EVENT",compSub:"Fastest Line Follower • Sri Lanka 🇱🇰",dateP:"Competition start date.",malaysiaP:"World Cup 10.0 location.",goal:"Goal",goalP:"Complete the course autonomously with accurate and competitive performance.",countdown:"Countdown to Malaysia",
+kPrep:"READY CHECK",prep:"Competition Preparation",media:"Build Media",mediaSub:"Add your real project photos and demonstration videos here.",footer:"Built by our team • 2026–2027"
+},
+ta:{
+navTeam:"அணி",navRobot:"ரோபோ",navTech:"தொழில்நுட்பம்",navBuild:"உருவாக்கம்",navTesting:"சோதனை",navCompetition:"போட்டி",
+badge:"டெக்னோக்சியன் உலகக் கோப்பை 10.0 • 2027",fastest:"வேகமான",lineFollower:"லைன் ஃபாலோவர்",
+heroText:"இலங்கையைச் சேர்ந்த 8 மாணவர்கள் TechnoXian 10.0 போட்டிக்காக தானியங்கி லைன் ஃபாலோவர் ரோபோவை உருவாக்கி, சோதித்து மேம்படுத்துகின்றனர்.",
+meet:"அணியைப் பார்க்க →",explore:"ரோபோவைப் பார்க்க",members:"உறுப்பினர்கள்",robotStat:"ரோபோ",controlStat:"கட்டுப்பாடு",eventStat:"உலகக் கோப்பை",
+kTeam:"அணி",ourTeam:"எங்கள் அணி",teamSub:"8 உறுப்பினர்கள் இணைந்து செயல்படுகின்றனர். பொறுப்புகள் பின்னர் சேர்க்கப்படும்.",roleOpen:"பொறுப்பு — பின்னர் தேர்வு செய்யப்படும்",
+kRobot:"இயந்திரம்",ourRobot:"எங்கள் ரோபோ",robotSub:"இறுதி வடிவமைப்பு முடிந்ததும் தொழில்நுட்ப விவரங்கள் சேர்க்கப்படும்.",photo:"இறுதி ரோபோ படம்",robotDesc:"துல்லியமான, அதிவேக லைன் டிராக்கிங்கிற்காக வடிவமைக்கப்படும் தானியங்கி ரோபோ.",specs:"விவரக்குறிப்புகள்",
+kTech:"பொறியியல்",technology:"தொழில்நுட்பம்",techSub:"சென்சார், நிரலாக்கம் மற்றும் கட்டுப்பாடு ஒரே அமைப்பாக செயல்படும்.",sensing:"லைன் சென்சிங்",sensingP:"IR சென்சார்கள் பாதையின் நிலையை கண்டறிந்து உடனடி தகவலை வழங்குகின்றன.",pid:"PID கட்டுப்பாடு",pidP:"லைன் பிழையை ஸ்டியரிங் திருத்தமாக PID மாற்றுகிறது.",motor:"மோட்டார் கட்டுப்பாடு",motorP:"மோட்டார் டிரைவர் மூலம் இடது மற்றும் வலது சக்கர வேகம் மாற்றப்படுகிறது.",calibration:"கேலிப்ரேஷன்",calP:"சென்சார் மற்றும் PID மதிப்புகள் நடைமுறை சோதனைகளால் சரிசெய்யப்படும்.",
+kBuild:"பயணப்பாதை",buildTitle:"உருவாக்கப் பயணம்",buildSub:"முதல் யோசனையிலிருந்து போட்டிக்குத் தயாரான ரோபோ வரை.",concept:"கருத்து",conceptP:"போட்டி, பாதை மற்றும் ரோபோ அமைப்பை ஆய்வு செய்தல்.",prototype:"முன்மாதிரி",prototypeP:"சாசிஸ், சென்சார்கள் மற்றும் மோட்டார்களை இணைத்து அடிப்படை லைன் ஃபாலோவரை உருவாக்குதல்.",control:"கட்டுப்பாடு",controlP:"நிலையான இயக்கத்திற்காக PID-ஐ செயல்படுத்தி சரிசெய்தல்.",testingWord:"சோதனை",testingP:"நேரான பாதை, வளைவு மற்றும் மூலைகளில் மீண்டும் மீண்டும் சோதித்தல்.",optimization:"மேம்படுத்தல்",optimizationP:"வேகம், பிடிப்பு, எடை மற்றும் மென்பொருளை மேம்படுத்துதல்.",competitionWord:"போட்டி",competitionP:"இறுதி ஆய்வு, பயிற்சி மற்றும் TechnoXian 10.0 தயாரிப்பு.",
+kTesting:"தரவு",testingTitle:"சோதனை மற்றும் முடிவுகள்",testingSub:"உண்மையான சோதனைத் தரவுகளை மட்டும் சேர்க்கவும்.",run:"சுற்று",time:"நேரம்",errors:"பிழைகள்",result:"முடிவு",
+kComp:"நிகழ்வு",compSub:"Fastest Line Follower • இலங்கை 🇱🇰",dateP:"போட்டி தொடங்கும் தேதி.",malaysiaP:"உலகக் கோப்பை 10.0 நடைபெறும் நாடு.",goal:"இலக்கு",goalP:"தானியங்கி முறையில் பாதையை துல்லியமாகவும் வேகமாகவும் முடித்தல்.",countdown:"மலேசியாவிற்கான கவுண்ட்டவுன்",
+kPrep:"தயார்நிலை",prep:"போட்டி தயாரிப்பு",media:"ஊடகம்",mediaSub:"உங்கள் உண்மையான திட்டப் படங்கள் மற்றும் வீடியோக்களை இங்கே சேர்க்கவும்.",footer:"எங்கள் அணியால் உருவாக்கப்பட்டது • 2026–2027"
+}
+};
+
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+const lang=document.getElementById("language");
+const theme=document.getElementById("theme");
+function applyLang(l){
+ document.documentElement.lang=l;
+ document.querySelectorAll("[data-i18n]").forEach(el=>{
+   const key=el.dataset.i18n;
+   if(dict[l][key]!==undefined) el.textContent=dict[l][key];
+ });
+ lsSet("txLang",l);
+ if(typeof restoreEdits==="function") restoreEdits();
+}
+function applyTheme(t){
+ document.documentElement.dataset.theme=t;
+ theme.textContent=t==="light"?"🌙":"☀️";
+ lsSet("txTheme",t);
+}
+lang.value=lsGet("txLang")||"en";
+applyLang(lang.value);
+applyTheme(lsGet("txTheme")||"dark");
+lang.addEventListener("change",e=>applyLang(e.target.value));
+theme.addEventListener("click",()=>applyTheme(document.documentElement.dataset.theme==="light"?"dark":"light"));
+(function(){
+ const bar=document.getElementById("bootBar"),line=document.getElementById("bootLine"),boot=document.getElementById("boot");
+ if(!bar||!line||!boot){console.warn("Boot screen elements missing");return}
+ const msgs=["INITIALIZING SENSORS…","CALIBRATING PID…","LOADING CHASSIS DATA…","LINE ACQUIRED."];
+ const DURATION=2200,start=performance.now();
+ let mi=-1;
+ function frame(now){
+  const p=Math.min(1,(now-start)/DURATION);
+  bar.style.width=(p*100)+"%";
+  const nm=Math.min(msgs.length-1,Math.floor(p*msgs.length));
+  if(nm!==mi){mi=nm;line.textContent=msgs[mi]}
+  if(p<1) requestAnimationFrame(frame);
+  else setTimeout(()=>boot.classList.add("hide"),250);
+ }
+ requestAnimationFrame(frame);
+})();
+
+document.querySelectorAll("section").forEach(s=>s.classList.add("reveal"));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(s=>io.observe(s));
+
+addEventListener("mousemove",e=>{
+ document.documentElement.style.setProperty("--mx",e.clientX+"px");
+ document.documentElement.style.setProperty("--my",e.clientY+"px");
+},{passive:true});
+document.querySelectorAll(".card").forEach(card=>{
+ card.addEventListener("mousemove",e=>{
+  const r=card.getBoundingClientRect();
+  card.style.setProperty("--cx",(e.clientX-r.left)+"px");
+  card.style.setProperty("--cy",(e.clientY-r.top)+"px");
+ });
+});
+
+const progressBar=document.getElementById("progress");
+addEventListener("scroll",()=>{
+ const h=document.documentElement;
+ const pct=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+ progressBar.style.width=pct+"%";
+},{passive:true});
+
+const navLinks=[...document.querySelectorAll(".links a")];
+const navSections=navLinks.map(a=>document.querySelector(a.getAttribute("href"))).filter(Boolean);
+const navIo=new IntersectionObserver(es=>es.forEach(e=>{
+ if(e.isIntersecting){
+  navLinks.forEach(a=>a.classList.remove("active"));
+  const idx=navSections.indexOf(e.target);
+  if(idx>-1) navLinks[idx].classList.add("active");
+ }
+}),{rootMargin:"-45% 0px -45% 0px"});
+navSections.forEach(s=>navIo.observe(s));
+
+const counted=new Set();
+const countIo=new IntersectionObserver(es=>es.forEach(e=>{
+ if(e.isIntersecting && !counted.has(e.target)){
+  counted.add(e.target);
+  const el=e.target,target=+el.dataset.target,start=performance.now(),dur=1200;
+  function step(now){
+   const p=Math.min(1,(now-start)/dur);
+   el.textContent=Math.round(target*(1-Math.pow(1-p,3)));
+   if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+ }
+}),{threshold:.4});
+document.querySelectorAll(".count").forEach(el=>countIo.observe(el));
+
+const eventDate=new Date("2027-01-30T00:00:00+08:00").getTime();
+function tickCountdown(){
+ const diff=eventDate-Date.now();
+ const el=(id,v)=>document.getElementById(id).textContent=Math.max(0,v);
+ if(diff<=0){el("cd-d",0);el("cd-h",0);el("cd-m",0);el("cd-s",0);return}
+ el("cd-d",Math.floor(diff/864e5));
+ el("cd-h",Math.floor(diff/36e5%24));
+ el("cd-m",Math.floor(diff/6e4%60));
+ el("cd-s",Math.floor(diff/1e3%60));
+}
+tickCountdown();setInterval(tickCountdown,1000);
+
+document.getElementById("mobile").addEventListener("click",()=>{
+ const links=document.querySelector(".links");
+ const open=links.style.display==="flex";
+ links.style.display=open?"none":"flex";
+ links.style.position="absolute";links.style.top="60px";links.style.left="0";links.style.right="0";
+ links.style.padding="18px 5%";links.style.background="var(--panel)";links.style.flexDirection="column";
+});
+
+function restoreEdits(){
+ document.querySelectorAll(".editable").forEach(el=>{
+  const saved=lsGet("tx10-edit-"+el.dataset.key);
+  if(saved!==null && saved!==""){el.textContent=saved;el.removeAttribute("data-i18n")}
+ });
+}
+restoreEdits();
+
+let devMode=false,clickTimes=[];
+const countdownCard=document.getElementById("countdownCard");
+const devBanner=document.getElementById("devBanner");
+const pwModal=document.getElementById("pwModal"),pwInput=document.getElementById("pwInput"),pwError=document.getElementById("pwError");
+const DEV_PASSWORD="5338";
+function setDevMode(on){
+ devMode=on;
+ document.body.classList.toggle("dev-mode",on);
+ devBanner.classList.toggle("hidden",!on);
+ document.querySelectorAll(".editable").forEach(el=>el.contentEditable=on?"true":"false");
+}
+function showPwModal(){pwModal.classList.remove("hidden");pwInput.value="";pwError.textContent="";setTimeout(()=>pwInput.focus(),50)}
+function hidePwModal(){pwModal.classList.add("hidden")}
+function tryUnlock(){
+ if(pwInput.value===DEV_PASSWORD){hidePwModal();setDevMode(true)}
+ else{pwError.textContent="Incorrect password";pwInput.value="";pwInput.focus()}
+}
+document.getElementById("pwSubmit").addEventListener("click",tryUnlock);
+document.getElementById("pwCancel").addEventListener("click",hidePwModal);
+pwInput.addEventListener("keydown",e=>{if(e.key==="Enter")tryUnlock()});
+if(countdownCard){
+ countdownCard.addEventListener("click",()=>{
+  const now=Date.now();
+  clickTimes=clickTimes.filter(t=>now-t<900);
+  clickTimes.push(now);
+  if(clickTimes.length>=4){
+   clickTimes=[];
+   if(devMode) setDevMode(false); else showPwModal();
+  }
+ });
+}
+const devExitBtn=document.getElementById("devExit");
+if(devExitBtn) devExitBtn.addEventListener("click",()=>setDevMode(false));
+
+const devExportBtn=document.getElementById("devExport");
+if(devExportBtn) devExportBtn.addEventListener("click", async ()=>{
+ setDevMode(false);
+ pwModal.classList.add("hidden");
+ const html="<!DOCTYPE html>\n"+document.documentElement.outerHTML;
+ try{
+  const downloads=await claude.use("downloads");
+  if(downloads){
+   await downloads.save({filename:"index.html", data: html});
+  }else{
+   const blob=new Blob([html],{type:"text/html"});
+   const a=document.createElement("a");
+   a.href=URL.createObjectURL(blob);a.download="index.html";a.click();
+  }
+ }catch(err){
+  const blob=new Blob([html],{type:"text/html"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);a.download="index.html";a.click();
+ }
+});
+document.querySelectorAll(".editable").forEach(el=>{
+ el.addEventListener("blur",()=>{
+  lsSet("tx10-edit-"+el.dataset.key, el.textContent.trim());
+ });
+ el.addEventListener("keydown",e=>{
+  if(e.key==="Enter"){e.preventDefault();el.blur()}
+ });
+});
+
+function renderMedia(slot){
+ const key=slot.dataset.key,type=slot.dataset.type;
+ const saved=lsGet("tx10-media-"+key);
+ const inner=slot.querySelector(".media-inner");
+ slot.querySelectorAll("img,video,iframe,.media-remove").forEach(n=>n.remove());
+ if(saved){
+  if(inner) inner.style.display="none";
+  let mediaEl;
+  if(type==="image"){
+   mediaEl=document.createElement("img");mediaEl.src=saved;mediaEl.alt=key;
+  }else if(saved.includes("youtube.com")||saved.includes("youtu.be")){
+   let id=saved.split(/v=|youtu\.be\//)[1]||"";id=id.split(/[?&]/)[0];
+   mediaEl=document.createElement("iframe");mediaEl.src="https://www.youtube.com/embed/"+id;mediaEl.allow="accelerometer; autoplay; encrypted-media; gyroscope";mediaEl.allowFullscreen=true;
+  }else{
+   mediaEl=document.createElement("video");mediaEl.src=saved;mediaEl.controls=true;
+  }
+  slot.appendChild(mediaEl);
+  const rm=document.createElement("button");rm.className="media-remove";rm.textContent="✕";rm.title="Remove";
+  rm.addEventListener("click",e=>{e.stopPropagation();lsSet("tx10-media-"+key,"");renderMedia(slot)});
+  slot.appendChild(rm);
+ }else if(inner){inner.style.display=""}
+}
+document.querySelectorAll(".media-slot").forEach(renderMedia);
+
+let activeSlot=null;
+const mediaFileInput=document.getElementById("mediaFileInput");
+mediaFileInput.addEventListener("change",e=>{
+ const file=e.target.files[0];
+ if(!file||!activeSlot){return}
+ const reader=new FileReader();
+ reader.onload=ev=>{
+  const img=new Image();
+  img.onload=()=>{
+   const maxW=900,scale=Math.min(1,maxW/img.width);
+   const canvas=document.createElement("canvas");
+   canvas.width=img.width*scale;canvas.height=img.height*scale;
+   canvas.getContext("2d").drawImage(img,0,0,canvas.width,canvas.height);
+   let dataUrl;
+   try{dataUrl=canvas.toDataURL("image/jpeg",0.72)}catch(err){dataUrl=ev.target.result}
+   lsSet("tx10-media-"+activeSlot.dataset.key,dataUrl);
+   renderMedia(activeSlot);
+  };
+  img.src=ev.target.result;
+ };
+ reader.readAsDataURL(file);
+ mediaFileInput.value="";
+});
+document.querySelectorAll(".media-slot").forEach(slot=>{
+ slot.addEventListener("click",e=>{
+  if(!devMode || e.target.classList.contains("media-remove")) return;
+  if(slot.dataset.type==="image"){activeSlot=slot;mediaFileInput.click()}
+  else{
+   const url=prompt("Paste a YouTube link or a direct video file URL:");
+   if(url){lsSet("tx10-media-"+slot.dataset.key,url.trim());renderMedia(slot)}
+  }
+ });
+});
+</script>
+
+</body></html>
