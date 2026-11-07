@@ -7,8 +7,8 @@
 A fresh student-team portfolio introducing the members, interests, projects and shared experiences of TMMV Robotics.
 
 <p>
-  <a href="https://lokilancer.github.io/TX10-portfolio/"><strong>VISIT THE WEBSITE ↗</strong></a> ·
-  <a href="https://github.com/lokilancer/TX10-portfolio"><strong>VIEW SOURCE CODE</strong></a>
+  <a href="https://lokilancer.github.io/TMMV-Robotics/"><strong>VISIT THE WEBSITE ↗</strong></a> ·
+  <a href="https://github.com/lokilancer/TMMV-Robotics"><strong>VIEW SOURCE CODE</strong></a>
 </p>
 
 ![Hosting](https://img.shields.io/badge/Hosting-GitHub%20Pages-292b23?style=for-the-badge&logo=github)
@@ -59,7 +59,7 @@ https://eng.pdn.ac.lk/societies/eees/perabots-2026/
 ## Project structure
 
 ```text
-TX10-portfolio/
+TMMV-Robotics/
 ├── .github/
 │   └── workflows/
 │       └── pages.yml
@@ -74,15 +74,15 @@ TX10-portfolio/
 Clone the repository and open `index.html` in a modern browser. No package installation or build step is required.
 
 ```bash
-git clone https://github.com/lokilancer/TX10-portfolio.git
-cd TX10-portfolio
+git clone https://github.com/lokilancer/TMMV-Robotics.git
+cd TMMV-Robotics
 ```
 
 ## Deployment
 
 The site is published with GitHub Pages:
 
-https://lokilancer.github.io/TX10-portfolio/
+https://lokilancer.github.io/TMMV-Robotics/
 
 ---
 
