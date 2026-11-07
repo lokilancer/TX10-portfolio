@@ -46,3 +46,6 @@ body.theme-dark .button-dark{background:#e9e0d2;color:#282820}
 body.theme-dark .button-light{background:#e9e0d2;color:#282820}
 @media(max-width:950px){.nav-tools{gap:7px}.nav-contact{display:none}}
 @media(max-width:680px){.nav-tools{margin-left:auto;gap:6px}.language-control select,.theme-toggle{height:32px;padding:0 7px;font-size:9px}.theme-toggle{gap:4px}.nav-tools .nav-contact{display:none}.nav-links{z-index:3}}
+
+.activity-symbol.activity-logo{width:96px;height:96px;background:#fff;border-radius:0;overflow:hidden;padding:3px}.activity-logo img{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:680px){.activity-symbol.activity-logo{width:70px;height:70px}}
