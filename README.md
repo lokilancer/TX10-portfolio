@@ -1,61 +1,78 @@
 <div align="center">
 
-# TX10 Collective
+# TMMV Robotics
 
-### A student team portfolio for projects, people and experiences.
+### Student Team Portfolio
 
-A bilingual English–Tamil portfolio introducing our team, the work we build, the skills we explore and the events we take part in.
+A portfolio for the TMMV Robotics team — introducing our members, interests, projects and shared experiences.
 
 <p>
   <a href="https://lokilancer.github.io/TX10-portfolio/"><strong>VISIT THE WEBSITE ↗</strong></a> ·
-  <a href="https://github.com/lokilancer/TX10-portfolio"><strong>VIEW THE SOURCE</strong></a>
+  <a href="https://github.com/lokilancer/TX10-portfolio"><strong>VIEW SOURCE CODE</strong></a>
 </p>
 
-[![GitHub stars](https://img.shields.io/github/stars/lokilancer/TX10-portfolio?style=for-the-badge&logo=github&label=Stars)](https://github.com/lokilancer/TX10-portfolio/stargazers)
-![Languages](https://img.shields.io/badge/Languages-English%20%2B%20Tamil-f04b28?style=for-the-badge)
-![Hosting](https://img.shields.io/badge/Hosting-GitHub%20Pages-171717?style=for-the-badge&logo=github)
+![Hosting](https://img.shields.io/badge/Hosting-GitHub%20Pages-0b2338?style=for-the-badge&logo=github)
+![Languages](https://img.shields.io/badge/Website-English-087f7d?style=for-the-badge)
+![Type](https://img.shields.io/badge/Project-Student%20Portfolio-123954?style=for-the-badge)
 
 </div>
 
 ---
 
-## The team
+## About TMMV Robotics
 
-TX10 Collective is a student team exploring technology, engineering, robotics and creative problem-solving. This site is our shared space to introduce the people behind the work and document our activities.
+TMMV Robotics is a student team interested in robotics, engineering, programming and practical technology. This website introduces the people behind the team and provides a place to share projects, activities and achievements.
 
-## What is on the website?
+## Team members
 
-- **Team** — meet the eight members and see their roles.
-- **Projects** — discover the ideas, builds and experiments we work on.
-- **Technology** — explore the tools and concepts behind our projects.
-- **Our process** — see how ideas move from planning to building and testing.
-- **Events** — a growing record of exhibitions, competitions and team experiences.
-- **English + Tamil** — switch between the two supported languages.
-- **Responsive layout** — designed for desktop, tablet and mobile screens.
+| Member | Team role |
+|---|---|
+| Sarukshan | Team Leader |
+| Jerushan | To be assigned |
+| Shajan | To be assigned |
+| Jathuragavan | To be assigned |
+| Piravin | To be assigned |
+| Rithakzha | To be assigned |
+| Delza | To be assigned |
+| Pirarthana | To be assigned |
 
-## Highlights
+All eight members participated in the **T.M.M.V ICT Expo**.
 
-- All eight team members participated in the **T.M.M.V ICT Expo**.
-- **TechnoXian World Cup 10.0** is featured as one of the team's robotics-related projects and experiences.
+## Website sections
 
-## Open the website
+- **Home** — introduction to TMMV Robotics.
+- **About** — team purpose and interests.
+- **Our Team** — member profiles, roles and participation.
+- **Projects** — robotics, programming and technology interests.
+- **Activities** — team events and experiences.
+- **Connection indicator** — displays whether the visitor's browser currently reports an internet connection.
+- **Responsive design** — layouts for desktop, tablet and mobile.
+- **Loading screen** — branded TMMV Robotics startup animation.
 
-**[tx10-portfolio — live website](https://lokilancer.github.io/TX10-portfolio/)**
+## Design reference
 
-## Run it locally
+The site's structured team-and-activities presentation takes inspiration from the official PeraBots website:
 
-This is a static website. You can run it without installing packages or setting up a server.
+https://eng.pdn.ac.lk/societies/eees/perabots-2026/
+
+The design and content here are independently written for TMMV Robotics.
+
+## Run locally
+
+No package installation or build tools are required.
 
 ```bash
 git clone https://github.com/lokilancer/TX10-portfolio.git
 cd TX10-portfolio
 ```
 
-Then open `index.html` in a modern web browser.
+Open `index.html` in a modern browser.
 
-## Hosting
+## Deployment
 
-The site is published using **GitHub Pages**. The deployment workflow is stored in `.github/workflows/pages.yml`.
+The site is published with **GitHub Pages**.
+
+Live website: https://lokilancer.github.io/TX10-portfolio/
 
 ## Project structure
 
@@ -68,18 +85,13 @@ TX10-portfolio/
 └── README.md
 ```
 
-The current site keeps its styles and scripts inside `index.html`.
-
-## Help the project grow
-
-If you find the team's work interesting, you can support the repository by starring it on GitHub.
-
-[![Star this repository](https://img.shields.io/badge/STAR%20THE%20PROJECT-★-f04b28?style=for-the-badge)](https://github.com/lokilancer/TX10-portfolio/stargazers)
+The website currently keeps its HTML, CSS and JavaScript in `index.html`.
 
 ---
 
 <div align="center">
 
-**TX10 COLLECTIVE** · Built by the team · Sri Lanka
+**TMMV ROBOTICS**  
+Built by the team · Sri Lanka
 
 </div>
