@@ -114,7 +114,7 @@ body.dev-mode .media-slot:hover .media-remove{display:block}
 </style>
 </head>
 <body class="">
-<div id="boot" class="hide">
+<div id="boot">
   <div class="logo-boot">TX10 // FLF</div>
   <div class="bar"><i id="bootBar" style="width: 100%;"></i></div>
   <div class="line" id="bootLine">LINE ACQUIRED.</div>
@@ -175,17 +175,16 @@ body.dev-mode .media-slot:hover .media-remove{display:block}
 <section id="team" class="reveal in">
   <div class="section-kicker" data-i18n="kTeam">THE PEOPLE</div>
   <h2 class="section-title" data-i18n="ourTeam">Our Team</h2>
-  <p class="section-sub" data-i18n="teamSub">Eight members working together. Roles will be assigned by the team and can be updated here later.</p>
+  <p class="section-sub" data-i18n="teamSub">Eight members working together, with Sarukshan leading the team.</p>
   <div class="grid">
-    <div class="card member" style="--cx: 58.984375px; --cy: 162.71875px;"><div class="avatar">👨‍💻</div><h3>Sarukshan</h3><div class="role editable" data-key="role2" data-i18n="roleOpen" contenteditable="false">Team Leader</div></div>
-    <div class="card member" style="--cx: 206.453125px; --cy: 134.71875px;"><div class="avatar">👨‍🔧</div><h3>Rithakza</h3><div class="role editable" data-key="role1" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
-    <div class="card member" style="--cx: 65.5px; --cy: 72.71875px;"><div class="avatar">👨‍💻</div><h3>Jerushan</h3><div class="role editable" data-key="role3" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
-    <div class="card member"><div class="avatar">👨‍🔧</div><h3>Shajan</h3><div class="role editable" data-key="role4" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
-    <div class="card member"><div class="avatar">👨‍🔬</div><h3>Jathuragavan</h3><div class="role editable" data-key="role5" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
-    <div class="card member" style="--cx: 180.984375px; --cy: 117.28125px;"><div class="avatar">👨‍💻</div><h3>Piravin</h3><div class="role editable" data-key="role6" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
     <div class="card member"><div class="avatar">👩‍🎨</div><h3>Delza</h3><div class="role editable" data-key="role7" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
     <div class="card member"><div class="avatar">👩‍🔬</div><h3>Pirarthana</h3><div class="role editable" data-key="role8" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
-  </div>
+    <div class="card member"><div class="avatar">👨‍💻</div><h3>Sarukshan</h3><div class="role editable" data-key="role2" contenteditable="false">Team Leader</div></div>
+    <div class="card member"><div class="avatar">👨‍🔧</div><h3>Rithakza</h3><div class="role editable" data-key="role1" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
+    <div class="card member"><div class="avatar">👨‍💻</div><h3>Jerushan</h3><div class="role editable" data-key="role3" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
+    <div class="card member"><div class="avatar">👨‍🔧</div><h3>Shajan</h3><div class="role editable" data-key="role4" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
+    <div class="card member"><div class="avatar">👨‍🔬</div><h3>Jathuragavan</h3><div class="role editable" data-key="role5" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
+    <div class="card member"><div class="avatar">👨‍💻</div><h3>Piravin</h3><div class="role editable" data-key="role6" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>/div>
 </section>
 
 <div class="divider"></div>
@@ -313,7 +312,7 @@ navTeam:"Team",navRobot:"Robot",navTech:"Technology",navBuild:"Build",navTesting
 badge:"TECHNOXIAN WORLD CUP 10.0 • 2027",fastest:"FASTEST",lineFollower:"LINE FOLLOWER",
 heroText:"Eight students from Sri Lanka building, testing and improving an autonomous racing robot for TechnoXian World Cup 10.0.",
 meet:"Meet the Team →",explore:"Explore the Robot",members:"Members",robotStat:"Robot",controlStat:"Control",eventStat:"World Cup",
-kTeam:"THE PEOPLE",ourTeam:"Our Team",teamSub:"Eight members working together. Roles will be assigned by the team and can be updated here later.",roleOpen:"Role — To be assigned",
+kTeam:"THE PEOPLE",ourTeam:"Our Team",teamSub:"Eight members working together, with Sarukshan leading the team.",roleOpen:"Role — To be assigned",
 kRobot:"THE MACHINE",ourRobot:"Our Robot",robotSub:"Technical specifications will be filled in after the final design is selected.",photo:"FINAL ROBOT PHOTO",robotDesc:"An autonomous line follower designed for accurate, high-speed tracking.",specs:"Specifications",
 kTech:"THE ENGINEERING",technology:"Technology",techSub:"Sensing, embedded programming and feedback control working as one system.",sensing:"Line Sensing",sensingP:"Infrared sensors detect the position of the track and provide real-time feedback.",pid:"PID Control",pidP:"PID converts line-position error into steering correction for smoother tracking.",motor:"Motor Control",motorP:"The controller adjusts left and right wheel speed through the motor driver.",calibration:"Calibration",calP:"Sensor thresholds and PID parameters are tuned through practical testing.",
 kBuild:"THE JOURNEY",buildTitle:"Build Journey",buildSub:"From first idea to competition-ready robot.",concept:"Concept",conceptP:"Research the competition, track requirements and robot architecture.",prototype:"Prototype",prototypeP:"Build the chassis, connect sensors and motors, and establish basic line following.",control:"Control",controlP:"Implement and tune PID control for stable tracking.",testingWord:"Testing",testingP:"Run repeated tests on straight lines, corners and curves.",optimization:"Optimization",optimizationP:"Improve traction, speed, weight distribution and software.",competitionWord:"Competition",competitionP:"Final inspection, practice and preparation for TechnoXian World Cup 10.0.",
