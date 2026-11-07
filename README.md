@@ -2,30 +2,30 @@
 
 # TMMV Robotics
 
-### Student Team Portfolio
+### People · Ideas · Machines
 
-A portfolio for the TMMV Robotics team — introducing our members, interests, projects and shared experiences.
+A fresh student-team portfolio introducing the members, interests, projects and shared experiences of TMMV Robotics.
 
 <p>
   <a href="https://lokilancer.github.io/TX10-portfolio/"><strong>VISIT THE WEBSITE ↗</strong></a> ·
   <a href="https://github.com/lokilancer/TX10-portfolio"><strong>VIEW SOURCE CODE</strong></a>
 </p>
 
-![Hosting](https://img.shields.io/badge/Hosting-GitHub%20Pages-0b2338?style=for-the-badge&logo=github)
-![Languages](https://img.shields.io/badge/Website-English-087f7d?style=for-the-badge)
-![Type](https://img.shields.io/badge/Project-Student%20Portfolio-123954?style=for-the-badge)
+![Hosting](https://img.shields.io/badge/Hosting-GitHub%20Pages-292b23?style=for-the-badge&logo=github)
+![Design](https://img.shields.io/badge/Design-Warm%20Editorial-c45b3e?style=for-the-badge)
+![Stack](https://img.shields.io/badge/HTML-CSS-JavaScript-777d4b?style=for-the-badge)
 
 </div>
 
 ---
 
-## About TMMV Robotics
+## About
 
-TMMV Robotics is a student team interested in robotics, engineering, programming and practical technology. This website introduces the people behind the team and provides a place to share projects, activities and achievements.
+TMMV Robotics is a student team interested in robotics, engineering, programming and practical technology. The website is a shared space to introduce the people behind the work and document team activities.
 
-## Team members
+## Team
 
-| Member | Team role |
+| Member | Role |
 |---|---|
 | Sarukshan | Team Leader |
 | Jerushan | To be assigned |
@@ -38,41 +38,23 @@ TMMV Robotics is a student team interested in robotics, engineering, programming
 
 All eight members participated in the **T.M.M.V ICT Expo**.
 
-## Website sections
+## Design
 
-- **Home** — introduction to TMMV Robotics.
-- **About** — team purpose and interests.
-- **Our Team** — member profiles, roles and participation.
-- **Projects** — robotics, programming and technology interests.
-- **Activities** — team events and experiences.
-- **Connection indicator** — displays whether the visitor's browser currently reports an internet connection.
-- **Responsive design** — layouts for desktop, tablet and mobile.
-- **Loading screen** — branded TMMV Robotics startup animation.
+The website uses a warm editorial visual direction with paper, charcoal, terracotta and olive colours. It is a fresh layout rather than a recolour of the earlier page, with an illustrated hero, numbered editorial sections, a team grid, project-interest list and activity feature.
 
-## Design reference
-
-The site's structured team-and-activities presentation takes inspiration from the official PeraBots website:
+The information architecture takes inspiration from the official PeraBots website while the design and content are independently created for TMMV Robotics:
 
 https://eng.pdn.ac.lk/societies/eees/perabots-2026/
 
-The design and content here are independently written for TMMV Robotics.
+## Features
 
-## Run locally
-
-No package installation or build tools are required.
-
-```bash
-git clone https://github.com/lokilancer/TX10-portfolio.git
-cd TX10-portfolio
-```
-
-Open `index.html` in a modern browser.
-
-## Deployment
-
-The site is published with **GitHub Pages**.
-
-Live website: https://lokilancer.github.io/TX10-portfolio/
+- Responsive desktop, tablet and mobile layout.
+- Custom animated TMMV loading screen.
+- Browser connection status indicator.
+- Mobile navigation.
+- Team member profiles and participation highlight.
+- Separate HTML, CSS and JavaScript files.
+- Reduced-motion accessibility support.
 
 ## Project structure
 
@@ -82,16 +64,31 @@ TX10-portfolio/
 │   └── workflows/
 │       └── pages.yml
 ├── index.html
+├── style.css
+├── script.js
 └── README.md
 ```
 
-The website currently keeps its HTML, CSS and JavaScript in `index.html`.
+## Run locally
+
+Clone the repository and open `index.html` in a modern browser. No package installation or build step is required.
+
+```bash
+git clone https://github.com/lokilancer/TX10-portfolio.git
+cd TX10-portfolio
+```
+
+## Deployment
+
+The site is published with GitHub Pages:
+
+https://lokilancer.github.io/TX10-portfolio/
 
 ---
 
 <div align="center">
 
 **TMMV ROBOTICS**  
-Built by the team · Sri Lanka
+Built with curiosity in Sri Lanka.
 
 </div>
