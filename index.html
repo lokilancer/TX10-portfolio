@@ -111,6 +111,54 @@ body.dev-mode .media-slot:hover .media-remove{display:block}
 .hero-track circle{filter:drop-shadow(0 0 6px var(--accent))}
 @media(max-width:900px){.links{display:none}.mobile-menu{display:block}.stats{grid-template-columns:1fr 1fr}.robot{grid-template-columns:1fr}.status-text{display:none}}
 @media(max-width:520px){nav{padding:11px 4%}.hero{min-height:82vh;padding:60px 5%}h1{letter-spacing:-2px}.stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}section{padding:62px 5%}.spec{grid-template-columns:1fr}}
+
+/* TX10 editorial competition redesign */
+:root{--bg:#f3f5f7;--bg2:#e9edf1;--panel:#fff;--panel2:#f7f9fb;--text:#172536;--muted:#647386;--accent:#c69b45;--accent2:#173b61;--line:#d8e0e7;--shadow:0 12px 32px #10243b12;--nav:rgba(255,255,255,.94)}
+[data-theme="dark"]{--bg:#101b29;--bg2:#162638;--panel:#1a2c40;--panel2:#20364d;--text:#f3f6fa;--muted:#b1c0cf;--accent:#e0b65e;--accent2:#7ba5cf;--line:#34495e;--shadow:0 15px 38px #0003;--nav:rgba(16,27,41,.94)}
+body{background:var(--bg);font-family:Inter,"Segoe UI",Arial,sans-serif}
+body:before{background-image:linear-gradient(#173b6108 1px,transparent 1px),linear-gradient(90deg,#173b6108 1px,transparent 1px);background-size:52px 52px}
+nav{padding:15px 6%;border-bottom:3px solid var(--accent);box-shadow:0 5px 22px #10243b0b}
+.logo{font-size:19px;letter-spacing:1.5px}.logo span{color:var(--accent);padding:0 4px}
+.links{gap:24px;font-weight:650}.links a{transition:color .2s}
+.control{border-radius:4px;padding:9px 11px}
+.hero{min-height:680px;background:linear-gradient(115deg,#102b48 0%,#173d62 58%,#245477 100%);color:#fff;padding:100px 6%;isolation:isolate}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#0b2038d9,#0b203855),repeating-linear-gradient(135deg,transparent 0 38px,#ffffff08 39px 40px)}
+.hero:after{background:radial-gradient(ellipse at 50% 100%,#e0b65e22,transparent 65%)}
+.hero-content{max-width:980px}
+.badge{border-radius:3px;border:1px solid #e0b65e88;background:#ffffff12;color:#f2cc7b;letter-spacing:1.7px}
+h1{font-size:clamp(46px,7.5vw,88px);letter-spacing:-2.5px;line-height:.98}
+.gradient{background:linear-gradient(90deg,#fff,#f1d28e,#fff);background-clip:text}
+.hero p{color:#d5e0eb;font-size:18px}
+.cta{border-radius:4px;background:var(--accent);color:#15283c;box-shadow:none}
+.cta:nth-of-type(2){border-color:#ffffff70;color:#fff}
+.stats{border-radius:5px;border-color:#ffffff35;background:#ffffff10;backdrop-filter:blur(8px);max-width:850px}
+.stat{border-color:#ffffff2b}.stat:hover{background:#ffffff12}.stat b{color:#f1cc7c}.stat small{color:#d5e0eb}
+section{padding:78px 6%;max-width:1320px}
+.section-kicker{color:#a77c2e;letter-spacing:2px}
+[data-theme="dark"] .section-kicker{color:#e0b65e}
+.section-title{font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:clamp(30px,4vw,42px);letter-spacing:-.5px}
+.section-sub{max-width:720px}
+.grid{gap:20px}
+.card{border-radius:7px;background:var(--panel);box-shadow:var(--shadow);border-color:var(--line);padding:25px}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 18px 36px #10243b18}
+.card:before,.card:after{border-radius:7px}
+.member{min-height:174px;border-top:3px solid var(--accent)}
+.avatar{border-radius:5px;background:var(--bg2);border-color:var(--line)}
+.role{color:var(--accent2)}
+[data-theme="dark"] .role{color:#e0b65e}
+.robot{gap:26px}.placeholder{border-radius:6px;background:var(--bg2);border-color:var(--line)}
+.spec div{border-radius:5px}
+.timeline{border-color:var(--accent)}
+.step:before{background:var(--accent);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 18%,transparent)}
+.check{border-radius:5px}
+.table th{color:var(--accent2)}
+[data-theme="dark"] .table th{color:#e0b65e}
+footer{background:var(--bg2);border-top:3px solid var(--accent)}
+#progress{background:linear-gradient(90deg,#173b61,var(--accent))}
+#cursorGlow{background:radial-gradient(500px circle at var(--mx,50%) var(--my,50%),#c69b4510,transparent 70%)}
+@media(max-width:900px){nav{padding:13px 4%}.links{gap:14px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
 </style>
 </head>
 <body class="">
@@ -184,7 +232,7 @@ body.dev-mode .media-slot:hover .media-remove{display:block}
     <div class="card member"><div class="avatar">👨‍💻</div><h3>Piravin</h3><div class="role editable" data-key="role6" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
     <div class="card member"><div class="avatar">👩‍🔧</div><h3>Rithakzha</h3><div class="role editable" data-key="role1" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
     <div class="card member"><div class="avatar">👩‍🎨</div><h3>Delza</h3><div class="role editable" data-key="role7" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
-    <div class="card member"><div class="avatar">👩‍🔬</div><h3>Pirarthana</h3><div class="role editable" data-key="role8" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>/div>
+    <div class="card member"><div class="avatar">👩‍🔬</div><h3>Pirarthana</h3><div class="role editable" data-key="role8" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div></div>
 </section>
 
 <section id="tech" class="reveal in">
