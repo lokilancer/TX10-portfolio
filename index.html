@@ -159,6 +159,77 @@ footer{background:var(--bg2);border-top:3px solid var(--accent)}
 @media(max-width:900px){nav{padding:13px 4%}.links{gap:14px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
+
+/* TX10 COLLECTIVE — complete editorial redesign */
+:root{--bg:#11150f;--bg2:#1b2117;--panel:#20281d;--panel2:#283322;--text:#f2f0e6;--muted:#a9ad9b;--accent:#c7f36b;--accent2:#e0ff9b;--line:#3a4631;--shadow:0 22px 55px #0005;--nav:rgba(17,21,15,.88)}
+[data-theme="light"]{--bg:#f3f1e8;--bg2:#e8e7db;--panel:#fffdf5;--panel2:#f4f3e9;--text:#20251b;--muted:#6e7565;--accent:#668d28;--accent2:#9dc84d;--line:#d9ddca;--shadow:0 18px 45px #28351a12;--nav:rgba(243,241,232,.9)}
+body{background:var(--bg);font-family:Inter,Arial,sans-serif}
+body:before{background-image:linear-gradient(#a9c37b0a 1px,transparent 1px),linear-gradient(90deg,#a9c37b0a 1px,transparent 1px);background-size:64px 64px}
+nav{padding:17px 6%;border-bottom:1px solid var(--line);backdrop-filter:blur(20px)}
+.logo{font-size:14px;letter-spacing:2px}.logo span{color:var(--muted);padding:0 5px}.logo b{color:var(--accent)}
+.links{gap:clamp(12px,2vw,28px);font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.control{border-radius:3px;padding:9px 11px}
+.hero{min-height:82vh;justify-items:start;padding:100px 9%;background:radial-gradient(ellipse at 82% 50%,#b5e45b19,transparent 36%),linear-gradient(115deg,transparent 58%,#c7f36b08 58%,transparent 82%)}
+.hero:after{background:radial-gradient(circle at 83% 50%,#c7f36b12,transparent 30%)}
+.hero:before{content:"";position:absolute;width:min(42vw,520px);aspect-ratio:1;right:7%;top:50%;transform:translateY(-50%);border:1px solid var(--line);border-radius:50%;box-shadow:0 0 0 34px #c7f36b08,0 0 0 68px #c7f36b05}
+.hero-content{max-width:780px;text-align:left;margin:0;z-index:2}
+.badge{border:0;border-radius:2px;background:var(--accent);color:#17200e;padding:9px 13px;letter-spacing:1.8px;font-size:10px;animation:none}
+h1{font-size:clamp(54px,9vw,112px);line-height:.88;letter-spacing:-5px;margin:30px 0}
+.gradient{background:none;color:var(--accent);-webkit-text-fill-color:var(--accent);animation:none}
+.hero p{margin:0 0 30px;font-size:17px;max-width:570px}
+.cta{border-radius:3px;background:var(--accent);color:#17200e;box-shadow:none;font-size:12px;text-transform:uppercase;letter-spacing:1px}
+.cta:nth-of-type(2){border-radius:3px;border:1px solid var(--line);background:transparent}
+.stats{margin:52px 0 0;max-width:700px;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;background:transparent}
+.stat{border-right:1px solid var(--line);padding:17px 20px 17px 0;text-align:left}.stat b{color:var(--accent);font-size:25px}.stat small{font-size:10px;text-transform:uppercase;letter-spacing:1.2px}
+section{padding:96px 8%;max-width:1450px}
+.section-kicker{font-size:10px;letter-spacing:2.5px;color:var(--accent)}
+.section-title{font-size:clamp(34px,5vw,56px);letter-spacing:-1.8px;line-height:1.02;margin:13px 0}
+.section-heading-row{display:flex;align-items:end;justify-content:space-between;gap:24px}
+.section-index{font:11px/1.4 "SF Mono",Consolas,monospace;color:var(--muted);letter-spacing:1px;white-space:nowrap;padding-bottom:34px}
+.section-sub{font-size:15px;max-width:650px;margin:12px 0 36px}
+.member-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.member-card{position:relative;min-height:270px;padding:22px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s,border-color .25s,background .25s;overflow:hidden}
+.member-card:hover{transform:translateY(-5px);border-color:var(--accent);background:var(--panel2)}
+.member-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.member-number{font:11px "SF Mono",Consolas,monospace;color:var(--muted);letter-spacing:1px}
+.member-avatar{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--accent);border-radius:50%;font-size:17px;font-weight:800;color:var(--accent)}
+.member-card h3{font-size:23px;letter-spacing:-.6px;margin:0 0 19px}
+.member-label{font:9px "SF Mono",Consolas,monospace;letter-spacing:1.6px;color:var(--muted);margin-bottom:6px}
+.member-role{font-size:13px;font-weight:750;color:var(--accent);min-height:20px}
+.member-rule{height:1px;background:var(--line);margin:17px 0 14px}
+.member-achievement{font-size:12px;line-height:1.55;color:var(--text);margin:0}
+.member-achievement:before{content:"↗";color:var(--accent);font-weight:900;margin-right:7px}
+.card{border-radius:4px;box-shadow:none;background:var(--panel);border-color:var(--line)}
+.card:hover{border-color:var(--accent);box-shadow:0 18px 35px #0002}
+.card:before,.card:after{display:none}
+.grid{gap:13px}
+.event-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.event-card{min-height:300px;padding:26px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.event-card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.event-featured{background:var(--accent);color:#17200e;border-color:var(--accent)}
+.event-meta,.event-footer{display:flex;justify-content:space-between;align-items:center;font:10px "SF Mono",Consolas,monospace;letter-spacing:1.3px}
+.event-meta{opacity:.8}
+.event-mark{font-size:clamp(48px,7vw,78px);font-weight:900;letter-spacing:-6px;margin:28px 0 10px;line-height:1}
+.event-mark span{font-size:22px;vertical-align:top;letter-spacing:0;margin-left:8px}
+.event-card h3{font-size:25px;letter-spacing:-.8px;margin:0 0 10px}
+.event-card p{font-size:13px;line-height:1.65;color:var(--muted);max-width:440px;margin:0 0 26px}
+.event-featured p{color:#344323}
+.event-footer{margin-top:auto;padding-top:15px;border-top:1px solid var(--line);font-size:9px}
+.event-featured .event-footer{border-color:#708e3b}
+.event-dot{color:var(--accent)}.event-featured .event-dot{color:#263a10}
+#countdownCard{border-radius:3px!important}
+.placeholder{border-radius:3px}
+footer{border-color:var(--line);letter-spacing:.5px}
+.divider{background:var(--line);opacity:.7}
+#progress{background:var(--accent)}
+#cursorGlow{display:none}
+#boot{background:#11150f;color:#c7f36b}
+#boot .bar i{background:#c7f36b}
+#boot .line{color:#a9ad9b}
+@media(max-width:1000px){.member-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero:before{right:-15%;opacity:.55}}
+@media(max-width:650px){nav{padding:12px 5%}.links{display:none}.hero{min-height:78vh;padding:76px 7%}.hero:before{width:75vw;right:-36%;top:35%;opacity:.38}h1{font-size:clamp(48px,14vw,78px);letter-spacing:-3px}.hero p{font-size:15px}.stats{grid-template-columns:repeat(2,1fr);margin-top:35px}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}section{padding:70px 6%}.section-heading-row{align-items:start}.section-index{padding:5px 0 0}.member-grid{grid-template-columns:1fr 1fr;gap:9px}.member-card{padding:15px;min-height:250px}.member-card h3{font-size:18px}.member-avatar{width:34px;height:34px}.event-grid{grid-template-columns:1fr}.event-card{min-height:260px}.mobile-menu{display:block}}
+@media(max-width:390px){.member-grid{grid-template-columns:1fr}.member-card{min-height:220px}.section-index{display:none}}
+
 </style>
 </head>
 <body class="">
@@ -170,7 +241,7 @@ footer{background:var(--bg2);border-top:3px solid var(--accent)}
 <div id="progress" style="width: 14.7519%;"></div>
 <div id="cursorGlow"></div>
 <nav>
-  <a class="logo" href="#home">TX10<span>•</span><b>FLF</b></a>
+  <a class="logo" href="#home">TX10<span> / </span><b>COLLECTIVE</b></a>
   <div class="links">
     <a href="#team" data-i18n="navTeam" class="active">Team</a>
     <a href="#robot" data-i18n="navRobot" class="">Robot</a>
@@ -208,9 +279,9 @@ footer{background:var(--bg2);border-top:3px solid var(--accent)}
 <div class="hero-content">
   <div class="badge">⚡ <span data-i18n="badge">STUDENT ENGINEERING & ROBOTICS PORTFOLIO</span></div>
   <h1><span data-i18n="fastest">BUILDING</span><br><span class="gradient" data-i18n="lineFollower">IDEAS INTO REALITY</span></h1>
-  <p data-i18n="heroText">Eight students from Sri Lanka building, testing and improving an autonomous racing robot for TechnoXian World Cup 10.0.</p>
+  <p data-i18n="heroText">A student team exploring engineering, technology and creative problem-solving through projects, exhibitions and competitions.</p>
   <a class="cta" href="#team" data-i18n="meet">Meet the Team →</a>
-  <a class="cta" href="#robot" data-i18n="explore">Explore the Robot</a>
+  <a class="cta" href="#competition" data-i18n="explore">Explore Events</a>
   <div class="stats">
     <div class="stat"><b class="count" data-target="8">8</b><small data-i18n="members">Members</small></div>
     <div class="stat"><b class="count" data-target="1">1</b><small data-i18n="robotStat">Robot</small></div>
@@ -222,17 +293,17 @@ footer{background:var(--bg2);border-top:3px solid var(--accent)}
 
 <section id="team" class="reveal in">
   <div class="section-kicker" data-i18n="kTeam">THE PEOPLE</div>
-  <h2 class="section-title" data-i18n="ourTeam">Our Team</h2>
-  <p class="section-sub" data-i18n="teamSub">Eight members working together, with Sarukshan leading the team.</p>
-  <div class="grid">
-    <div class="card member"><div class="avatar">👨‍💻</div><h3>Sarukshan</h3><div class="role editable" data-key="role2" contenteditable="false">Team Leader</div></div>
-    <div class="card member"><div class="avatar">👨‍💻</div><h3>Jerushan</h3><div class="role editable" data-key="role3" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
-    <div class="card member"><div class="avatar">👨‍🔧</div><h3>Shajan</h3><div class="role editable" data-key="role4" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
-    <div class="card member"><div class="avatar">👨‍🔬</div><h3>Jathuragavan</h3><div class="role editable" data-key="role5" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
-    <div class="card member"><div class="avatar">👨‍💻</div><h3>Piravin</h3><div class="role editable" data-key="role6" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
-    <div class="card member"><div class="avatar">👩‍🔧</div><h3>Rithakzha</h3><div class="role editable" data-key="role1" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
-    <div class="card member"><div class="avatar">👩‍🎨</div><h3>Delza</h3><div class="role editable" data-key="role7" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div>
-    <div class="card member"><div class="avatar">👩‍🔬</div><h3>Pirarthana</h3><div class="role editable" data-key="role8" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div></div></div>
+  <div class="section-heading-row"><div><h2 class="section-title" data-i18n="ourTeam">The people behind the work.</h2><p class="section-sub" data-i18n="teamSub">Eight members. Different strengths. One team moving ideas forward.</p></div><div class="section-index">01 / TEAM</div></div>
+  <div class="member-grid">
+    <article class="member-card"><div class="member-top"><span class="member-number">01</span><span class="member-avatar">S</span></div><h3>Sarukshan</h3><div class="member-label" data-i18n="roleLabel">TEAM ROLE</div><div class="member-role editable" data-key="role2" contenteditable="false">Team Leader</div><div class="member-rule"></div><div class="member-label" data-i18n="achievementLabel">ACHIEVEMENT</div><p class="member-achievement" data-i18n="expoAchievement">Participated in T.M.M.V ICT Expo</p></article>
+    <article class="member-card"><div class="member-top"><span class="member-number">02</span><span class="member-avatar">J</span></div><h3>Jerushan</h3><div class="member-label" data-i18n="roleLabel">TEAM ROLE</div><div class="member-role editable" data-key="role3" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div><div class="member-rule"></div><div class="member-label" data-i18n="achievementLabel">ACHIEVEMENT</div><p class="member-achievement" data-i18n="expoAchievement">Participated in T.M.M.V ICT Expo</p></article>
+    <article class="member-card"><div class="member-top"><span class="member-number">03</span><span class="member-avatar">S</span></div><h3>Shajan</h3><div class="member-label" data-i18n="roleLabel">TEAM ROLE</div><div class="member-role editable" data-key="role4" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div><div class="member-rule"></div><div class="member-label" data-i18n="achievementLabel">ACHIEVEMENT</div><p class="member-achievement" data-i18n="expoAchievement">Participated in T.M.M.V ICT Expo</p></article>
+    <article class="member-card"><div class="member-top"><span class="member-number">04</span><span class="member-avatar">J</span></div><h3>Jathuragavan</h3><div class="member-label" data-i18n="roleLabel">TEAM ROLE</div><div class="member-role editable" data-key="role5" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div><div class="member-rule"></div><div class="member-label" data-i18n="achievementLabel">ACHIEVEMENT</div><p class="member-achievement" data-i18n="expoAchievement">Participated in T.M.M.V ICT Expo</p></article>
+    <article class="member-card"><div class="member-top"><span class="member-number">05</span><span class="member-avatar">P</span></div><h3>Piravin</h3><div class="member-label" data-i18n="roleLabel">TEAM ROLE</div><div class="member-role editable" data-key="role6" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div><div class="member-rule"></div><div class="member-label" data-i18n="achievementLabel">ACHIEVEMENT</div><p class="member-achievement" data-i18n="expoAchievement">Participated in T.M.M.V ICT Expo</p></article>
+    <article class="member-card"><div class="member-top"><span class="member-number">06</span><span class="member-avatar">R</span></div><h3>Rithakzha</h3><div class="member-label" data-i18n="roleLabel">TEAM ROLE</div><div class="member-role editable" data-key="role1" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div><div class="member-rule"></div><div class="member-label" data-i18n="achievementLabel">ACHIEVEMENT</div><p class="member-achievement" data-i18n="expoAchievement">Participated in T.M.M.V ICT Expo</p></article>
+    <article class="member-card"><div class="member-top"><span class="member-number">07</span><span class="member-avatar">D</span></div><h3>Delza</h3><div class="member-label" data-i18n="roleLabel">TEAM ROLE</div><div class="member-role editable" data-key="role7" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div><div class="member-rule"></div><div class="member-label" data-i18n="achievementLabel">ACHIEVEMENT</div><p class="member-achievement" data-i18n="expoAchievement">Participated in T.M.M.V ICT Expo</p></article>
+    <article class="member-card"><div class="member-top"><span class="member-number">08</span><span class="member-avatar">P</span></div><h3>Pirarthana</h3><div class="member-label" data-i18n="roleLabel">TEAM ROLE</div><div class="member-role editable" data-key="role8" data-i18n="roleOpen" contenteditable="false">Role — To be assigned</div><div class="member-rule"></div><div class="member-label" data-i18n="achievementLabel">ACHIEVEMENT</div><p class="member-achievement" data-i18n="expoAchievement">Participated in T.M.M.V ICT Expo</p></article>
+  </div>
 </section>
 
 <section id="tech" class="reveal in">
@@ -281,12 +352,11 @@ footer{background:var(--bg2);border-top:3px solid var(--accent)}
 <div class="divider"></div>
 <section id="competition" class="reveal in">
   <div class="section-kicker" data-i18n="kComp">THE EVENT</div>
-  <h2 class="section-title">TechnoXian World Cup 10.0</h2>
-  <p class="section-sub" data-i18n="compSub">Fastest Line Follower • Sri Lanka 🇱🇰</p>
-  <div class="grid">
-    <div class="card"><div class="tech-icon">📅</div><h3>30 January 2027</h3><p data-i18n="dateP">Competition start date.</p></div>
-    <div class="card"><div class="tech-icon">🇲🇾</div><h3>Malaysia</h3><p data-i18n="malaysiaP">World Cup 10.0 location.</p></div>
-    <div class="card"><div class="tech-icon">🏁</div><h3 data-i18n="goal">Goal</h3><p data-i18n="goalP">Complete the course autonomously with accurate and competitive performance.</p></div>
+  <h2 class="section-title" data-i18n="eventsTitle">Events & Experiences</h2>
+  <p class="section-sub" data-i18n="compSub">A growing record of exhibitions, competitions and experiences. This section uses one consistent format for every event.</p>
+  <div class="event-grid">
+    <article class="event-card event-featured"><div class="event-meta"><span data-i18n="eventTypeExpo">EXHIBITION</span><span>01 / 02</span></div><div class="event-mark">ICT<span>↗</span></div><h3>T.M.M.V ICT Expo</h3><p data-i18n="expoEventText">All eight team members participated in the T.M.M.V ICT Expo.</p><div class="event-footer"><span data-i18n="participation">TEAM PARTICIPATION</span><span class="event-dot">●</span></div></article>
+    <article class="event-card"><div class="event-meta"><span data-i18n="eventTypeCompetition">COMPETITION</span><span>02 / 02</span></div><div class="event-mark">TX<span>↗</span></div><h3>TechnoXian World Cup 10.0</h3><p data-i18n="txEventText">Featured robotics competition project — preparation and participation details can be added here.</p><div class="event-footer"><span data-i18n="featuredProject">FEATURED PROJECT</span><span class="event-dot">●</span></div></article>
   </div>
   <div class="card" id="countdownCard" style="margin-top: 18px; text-align: center; cursor: pointer; --cx: 503.453125px; --cy: 84.6875px;">
     <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px" data-i18n="countdown">Countdown to Malaysia</div>
@@ -340,11 +410,11 @@ footer{background:var(--bg2);border-top:3px solid var(--accent)}
 <script>
 const dict={
 en:{
-navTeam:"Team",navRobot:"Projects",navTech:"Skills & Technology",navBuild:"Our Journey",navTesting:"Progress",navCompetition:"Highlights",
+navTeam:"Team",navRobot:"Projects",navTech:"Capabilities",navBuild:"Process",navTesting:"Progress",navCompetition:"Events",
 badge:"STUDENT ENGINEERING & ROBOTICS PORTFOLIO",fastest:"BUILDING",lineFollower:"IDEAS INTO REALITY",
-heroText:"A team of eight students exploring engineering, robotics and technology through hands-on projects, creative problem-solving and competitions. Discover our work, skills and journey.",
+heroText:"A student team exploring engineering, technology and creative problem-solving through projects, exhibitions and competitions. Meet the people, discover our work and follow every event.",
 meet:"Meet the Team →",explore:"Explore Our Work",members:"Team Members",robotStat:"Featured Project",controlStat:"Focus Area",eventStat:"Active Since",
-kTeam:"THE PEOPLE",ourTeam:"Our Team",teamSub:"Eight members working together, with Sarukshan leading the team.",roleOpen:"Role — To be assigned",
+kTeam:"THE PEOPLE",ourTeam:"Our Team",teamSub:"Eight members working together, with Sarukshan leading the team.",roleOpen:"Role to be added",roleLabel:"TEAM ROLE",achievementLabel:"ACHIEVEMENT",expoAchievement:"Participated in T.M.M.V ICT Expo",
 kRobot:"FEATURED WORK",ourRobot:"Projects & Experiments",robotSub:"A look at the projects we are developing, starting with our autonomous line-follower robot.",photo:"PROJECT MEDIA",robotDesc:"Our featured project: an autonomous line follower developed for learning, testing and competitive robotics.",specs:"Project Details",
 kTech:"WHAT WE WORK WITH",technology:"Skills & Technology",techSub:"The tools, concepts and technical areas we explore across our projects.",sensing:"Line Sensing",sensingP:"Infrared sensors detect the position of the track and provide real-time feedback.",pid:"PID Control",pidP:"PID converts line-position error into steering correction for smoother tracking.",motor:"Motor Control",motorP:"The controller adjusts left and right wheel speed through the motor driver.",calibration:"Calibration",calP:"Sensor thresholds and PID parameters are tuned through practical testing.",
 kBuild:"HOW WE WORK",buildTitle:"Our Journey",buildSub:"From ideas and research to prototypes, testing and continuous improvement.",concept:"Concept",conceptP:"Research the competition, track requirements and robot architecture.",prototype:"Prototype",prototypeP:"Build the chassis, connect sensors and motors, and establish basic line following.",control:"Control",controlP:"Implement and tune PID control for stable tracking.",testingWord:"Testing",testingP:"Run repeated tests on straight lines, corners and curves.",optimization:"Optimization",optimizationP:"Improve traction, speed, weight distribution and software.",competitionWord:"Competition",competitionP:"Final inspection, practice and preparation for TechnoXian World Cup 10.0.",
@@ -357,7 +427,7 @@ navTeam:"அணி",navRobot:"ரோபோ",navTech:"தொழில்நுட
 badge:"மாணவர் பொறியியல் மற்றும் ரோபோட்டிக்ஸ் தொகுப்பு",fastest:"யோசனைகளை",lineFollower:"நிஜமாக்குகிறோம்",
 heroText:"எட்டு மாணவர்கள் கொண்ட எங்கள் அணி பொறியியல், ரோபோட்டிக்ஸ் மற்றும் தொழில்நுட்பத்தை நடைமுறைத் திட்டங்கள், படைப்பாற்றல் மற்றும் போட்டிகள் மூலம் ஆராய்கிறது.",
 meet:"அணியைப் பார்க்க →",explore:"எங்கள் பணிகளைப் பார்க்க",members:"அணி உறுப்பினர்கள்",robotStat:"முக்கிய திட்டம்",controlStat:"முக்கிய துறை",eventStat:"செயல்படும் காலம்",
-kTeam:"அணி",ourTeam:"எங்கள் அணி",teamSub:"8 உறுப்பினர்கள் இணைந்து செயல்படுகின்றனர். பொறுப்புகள் பின்னர் சேர்க்கப்படும்.",roleOpen:"பொறுப்பு — பின்னர் தேர்வு செய்யப்படும்",
+kTeam:"அணி",ourTeam:"எங்கள் அணி",teamSub:"8 உறுப்பினர்கள் இணைந்து செயல்படுகின்றனர். பொறுப்புகள் பின்னர் சேர்க்கப்படும்.",roleOpen:"பொறுப்பு பின்னர் சேர்க்கப்படும்",roleLabel:"அணி பொறுப்பு",achievementLabel:"சாதனை",expoAchievement:"T.M.M.V ICT கண்காட்சியில் பங்கேற்றார்",
 kRobot:"முக்கியப் பணி",ourRobot:"திட்டங்கள் மற்றும் சோதனைகள்",robotSub:"எங்கள் திட்டங்களைப் பாருங்கள். முதன்மைத் திட்டமாக தானியங்கி லைன் ஃபாலோவர் ரோபோ உருவாக்கப்படுகிறது.",photo:"திட்ட ஊடகம்",robotDesc:"கற்றல், சோதனை மற்றும் ரோபோட்டிக்ஸ் போட்டிகளுக்காக உருவாக்கப்படும் தானியங்கி லைன் ஃபாலோவர்.",specs:"திட்ட விவரங்கள்",
 kTech:"எங்கள் திறன்கள்",technology:"திறன்கள் மற்றும் தொழில்நுட்பம்",techSub:"எங்கள் திட்டங்களில் பயன்படுத்தும் கருவிகள், கருத்துகள் மற்றும் தொழில்நுட்பத் துறைகள்.",sensing:"லைன் சென்சிங்",sensingP:"IR சென்சார்கள் பாதையின் நிலையை கண்டறிந்து உடனடி தகவலை வழங்குகின்றன.",pid:"PID கட்டுப்பாடு",pidP:"லைன் பிழையை ஸ்டியரிங் திருத்தமாக PID மாற்றுகிறது.",motor:"மோட்டார் கட்டுப்பாடு",motorP:"மோட்டார் டிரைவர் மூலம் இடது மற்றும் வலது சக்கர வேகம் மாற்றப்படுகிறது.",calibration:"கேலிப்ரேஷன்",calP:"சென்சார் மற்றும் PID மதிப்புகள் நடைமுறை சோதனைகளால் சரிசெய்யப்படும்.",
 kBuild:"எங்கள் செயல்முறை",buildTitle:"எங்கள் பயணம்",buildSub:"யோசனை மற்றும் ஆய்விலிருந்து முன்மாதிரி, சோதனை மற்றும் தொடர்ச்சியான மேம்பாடு வரை.",concept:"கருத்து",conceptP:"போட்டி, பாதை மற்றும் ரோபோ அமைப்பை ஆய்வு செய்தல்.",prototype:"முன்மாதிரி",prototypeP:"சாசிஸ், சென்சார்கள் மற்றும் மோட்டார்களை இணைத்து அடிப்படை லைன் ஃபாலோவரை உருவாக்குதல்.",control:"கட்டுப்பாடு",controlP:"நிலையான இயக்கத்திற்காக PID-ஐ செயல்படுத்தி சரிசெய்தல்.",testingWord:"சோதனை",testingP:"நேரான பாதை, வளைவு மற்றும் மூலைகளில் மீண்டும் மீண்டும் சோதித்தல்.",optimization:"மேம்படுத்தல்",optimizationP:"வேகம், பிடிப்பு, எடை மற்றும் மென்பொருளை மேம்படுத்துதல்.",competitionWord:"போட்டி",competitionP:"இறுதி ஆய்வு, பயிற்சி மற்றும் TechnoXian 10.0 தயாரிப்பு.",
