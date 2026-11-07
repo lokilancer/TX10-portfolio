@@ -230,6 +230,104 @@ footer{border-color:var(--line);letter-spacing:.5px}
 @media(max-width:650px){nav{padding:12px 5%}.links{display:none}.hero{min-height:78vh;padding:76px 7%}.hero:before{width:75vw;right:-36%;top:35%;opacity:.38}h1{font-size:clamp(48px,14vw,78px);letter-spacing:-3px}.hero p{font-size:15px}.stats{grid-template-columns:repeat(2,1fr);margin-top:35px}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}section{padding:70px 6%}.section-heading-row{align-items:start}.section-index{padding:5px 0 0}.member-grid{grid-template-columns:1fr 1fr;gap:9px}.member-card{padding:15px;min-height:250px}.member-card h3{font-size:18px}.member-avatar{width:34px;height:34px}.event-grid{grid-template-columns:1fr}.event-card{min-height:260px}.mobile-menu{display:block}}
 @media(max-width:390px){.member-grid{grid-template-columns:1fr}.member-card{min-height:220px}.section-index{display:none}}
 
+
+/* 2026 refresh — a deliberately new visual identity */
+:root{
+ --bg:#f6f0e6;--bg2:#e9dfd0;--panel:#fffaf1;--panel2:#f0e6d8;
+ --text:#171717;--muted:#69645d;--accent:#f04b28;--accent2:#1c3d35;
+ --line:#cfc3b3;--shadow:8px 8px 0 #17171718;--nav:#f6f0e6;
+}
+[data-theme="dark"]{
+ --bg:#171a18;--bg2:#202522;--panel:#252b27;--panel2:#303832;
+ --text:#f6f0e6;--muted:#b8b3a8;--accent:#ff6845;--accent2:#b7d68c;
+ --line:#485149;--shadow:8px 8px 0 #0005;--nav:rgba(23,26,24,.96);
+}
+html{scroll-padding-top:78px}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);background-image:none}
+body:before,#cursorGlow{display:none}
+nav{padding:18px 5%;border:0;border-bottom:2px solid var(--text);box-shadow:none;background:var(--nav)}
+.logo{font-size:17px;letter-spacing:-.5px}.logo span{color:var(--accent);padding:0 7px}
+.links{gap:clamp(10px,1.8vw,25px);font-size:11px;letter-spacing:1.3px;font-weight:900}
+.links a{color:var(--text);text-transform:uppercase}
+.links a.active,.links a:hover{color:var(--accent)}
+.control{border:2px solid var(--text);border-radius:0;background:transparent;color:var(--text);font-weight:800}
+.hero{min-height:calc(100vh - 65px);display:flex;align-items:center;justify-content:flex-start;padding:8vw 9%;background:var(--accent);color:#171717;overflow:hidden}
+.hero:before{content:"TX";position:absolute;right:-3vw;bottom:-15vw;font-size:clamp(260px,48vw,700px);font-weight:1000;letter-spacing:-.12em;line-height:.8;color:#1717170c;z-index:-1}
+.hero:after{display:none}
+.hero-track{opacity:.16;mix-blend-mode:multiply}
+.hero-track path{stroke:#171717;stroke-width:3;stroke-dasharray:10 10}
+.hero-content{max-width:950px;text-align:left;margin:0;z-index:2}
+.badge{background:#171717;color:#f6f0e6;border:0;border-radius:0;letter-spacing:2px;font-size:10px;animation:none}
+h1{font-size:clamp(64px,11vw,150px);line-height:.82;letter-spacing:-.085em;margin:32px 0}
+.gradient{background:none;color:#171717;-webkit-text-fill-color:#171717;animation:none}
+.hero p{color:#29251f;font-size:clamp(16px,2vw,21px);max-width:560px;margin:0 0 30px}
+.cta{border-radius:0;background:#171717;color:#f6f0e6;box-shadow:5px 5px 0 #fff7;font-size:11px;letter-spacing:1.3px;text-transform:uppercase}
+.cta:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 #fff7}
+.cta:nth-of-type(2){border:2px solid #171717;color:#171717;background:transparent}
+.stats{max-width:760px;margin:55px 0 0;border:0;border-top:2px solid #171717;border-bottom:2px solid #171717;border-radius:0;background:transparent}
+.stat{padding:18px 16px 18px 0;text-align:left;border-color:#17171755}
+.stat b{font-size:30px;color:#171717}.stat small{color:#29251f;font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+section{max-width:1500px;padding:110px 9%}
+.section-kicker{color:var(--accent);font-size:11px;font-weight:1000;letter-spacing:3px}
+.section-title{font-family:Arial,Helvetica,sans-serif;font-weight:1000;font-size:clamp(40px,6vw,76px);letter-spacing:-.07em;line-height:.92;text-transform:uppercase;margin:14px 0}
+.section-sub{font-size:16px;max-width:650px}
+.section-index{font-size:12px;font-weight:900;color:var(--accent);border-bottom:2px solid var(--accent);padding:0 0 8px}
+.section-heading-row{align-items:start}
+.member-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--text);border-left:2px solid var(--text)}
+.member-card{min-height:300px;padding:24px;background:var(--panel);border:0;border-right:2px solid var(--text);border-bottom:2px solid var(--text);transition:background .2s,transform .2s}
+.member-card:hover{transform:none;background:var(--accent);color:#171717}
+.member-top{margin-bottom:45px}
+.member-number{font-weight:900;color:var(--accent)}
+.member-avatar{width:52px;height:52px;border:2px solid var(--text);border-radius:50%;background:var(--accent);color:#171717;font-size:22px;font-weight:900}
+.member-card h3{font-size:clamp(20px,2vw,28px);letter-spacing:-1px;margin:0 0 18px}
+.member-label{font-size:9px;letter-spacing:2px;font-weight:1000;color:var(--muted)}
+.member-role{font-size:14px;font-weight:900;margin:5px 0 16px}
+.member-rule{height:2px;background:var(--line);margin:0 0 15px}
+.member-achievement{font-size:13px;line-height:1.5;color:var(--muted)}
+.member-card:hover .member-label,.member-card:hover .member-achievement,.member-card:hover .member-number{color:#30251f}
+.robot{gap:0;align-items:stretch}
+.robot>.card{border:2px solid var(--text);border-radius:0;box-shadow:8px 8px 0 var(--accent);padding:30px}
+.card,.placeholder,.check,.spec div{border-radius:0;box-shadow:none}
+.card{border:2px solid var(--text);background:var(--panel)}
+.card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:5px 5px 0 var(--accent)}
+.card:before,.card:after{display:none}
+.placeholder{border:2px dashed var(--muted);background:var(--bg2)}
+.spec div{border:1px solid var(--line);background:var(--bg2)}
+.timeline{border-left:3px solid var(--accent);padding-left:30px}
+.step:before{width:13px;height:13px;left:-38px;border-radius:0;background:var(--accent);box-shadow:none}
+.event-grid{gap:0;border:2px solid var(--text)}
+.event-card{border:0;border-right:2px solid var(--text);border-radius:0;background:var(--panel);padding:clamp(24px,4vw,50px);min-height:350px}
+.event-card:last-child{border-right:0}
+.event-card.event-featured{background:var(--accent);color:#171717}
+.event-card p{color:var(--muted)}
+.event-card.event-featured p,.event-card.event-featured .event-meta,.event-card.event-featured .event-footer{color:#30251f}
+.event-mark{font-size:clamp(60px,10vw,120px);font-weight:1000;letter-spacing:-.1em}
+.event-meta,.event-footer{font-size:10px;font-weight:1000;letter-spacing:2px}
+#countdownCard{border-radius:0!important;border:2px solid var(--text)!important}
+footer{background:var(--text);color:var(--bg);border:0;text-align:left;padding:55px 9%}
+footer strong{color:var(--accent)}
+#progress{height:5px;background:var(--accent)}
+#boot{background:#171717;color:#f04b28}
+#boot .bar{background:#444}
+#boot .bar i{background:#f04b28}
+#boot .line{color:#ddd}
+@media(max-width:900px){
+ .member-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .event-grid{grid-template-columns:1fr}
+ .event-card{border-right:0;border-bottom:2px solid var(--text)}
+ .event-card:last-child{border-bottom:0}
+ .hero{min-height:760px}
+}
+@media(max-width:520px){
+ nav{padding:13px 4%}.hero{padding:70px 7%;min-height:740px}
+ h1{font-size:clamp(60px,16vw,94px);letter-spacing:-.09em}
+ section{padding:78px 7%}.member-grid{grid-template-columns:1fr 1fr}
+ .member-card{padding:17px;min-height:260px}.member-top{margin-bottom:28px}
+ .stats{margin-top:38px}.stat{padding:13px 8px 13px 0}
+ .section-heading-row{display:block}.section-index{display:inline-block;margin-top:5px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
 </style>
 </head>
 <body class="">
@@ -333,22 +431,6 @@ footer{border-color:var(--line);letter-spacing:.5px}
   </div>
 </section>
 
-<section id="testing" class="reveal in">
-  <div class="section-kicker" data-i18n="kTesting">THE DATA</div>
-  <h2 class="section-title" data-i18n="testingTitle">Testing &amp; Results</h2>
-  <p class="section-sub" data-i18n="testingSub">Add real measurements as your robot improves. Never replace them with guessed results.</p>
-  <div class="card table-wrap"><table class="table">
-    <thead><tr><th data-i18n="run">Run</th><th data-i18n="time">Time</th><th data-i18n="errors">Errors</th><th data-i18n="result">Result</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td class="editable" data-key="t1time" contenteditable="false">[___ s]</td><td class="editable" data-key="t1err" contenteditable="false">[___]</td><td class="editable" data-key="t1res" contenteditable="false">[Success / Improve]</td></tr>
-      <tr><td>2</td><td class="editable" data-key="t2time" contenteditable="false">[___ s]</td><td class="editable" data-key="t2err" contenteditable="false">[___]</td><td class="editable" data-key="t2res" contenteditable="false">[Success / Improve]</td></tr>
-      <tr><td>3</td><td class="editable" data-key="t3time" contenteditable="false">[___ s]</td><td class="editable" data-key="t3err" contenteditable="false">[___]</td><td class="editable" data-key="t3res" contenteditable="false">[Success / Improve]</td></tr>
-      <tr><td>4</td><td class="editable" data-key="t4time" contenteditable="false">[___ s]</td><td class="editable" data-key="t4err" contenteditable="false">[___]</td><td class="editable" data-key="t4res" contenteditable="false">[Success / Improve]</td></tr>
-      <tr><td>5</td><td class="editable" data-key="t5time" contenteditable="false">[___ s]</td><td class="editable" data-key="t5err" contenteditable="false">[___]</td><td class="editable" data-key="t5res" contenteditable="false">[Success / Improve]</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
 <div class="divider"></div>
 <section id="competition" class="reveal in">
   <div class="section-kicker" data-i18n="kComp">THE EVENT</div>
@@ -418,7 +500,6 @@ kTeam:"THE PEOPLE",ourTeam:"Our Team",teamSub:"Eight members working together, w
 kRobot:"FEATURED WORK",ourRobot:"Projects & Experiments",robotSub:"A look at the projects we are developing, starting with our autonomous line-follower robot.",photo:"PROJECT MEDIA",robotDesc:"Our featured project: an autonomous line follower developed for learning, testing and competitive robotics.",specs:"Project Details",
 kTech:"WHAT WE WORK WITH",technology:"Skills & Technology",techSub:"The tools, concepts and technical areas we explore across our projects.",sensing:"Line Sensing",sensingP:"Infrared sensors detect the position of the track and provide real-time feedback.",pid:"PID Control",pidP:"PID converts line-position error into steering correction for smoother tracking.",motor:"Motor Control",motorP:"The controller adjusts left and right wheel speed through the motor driver.",calibration:"Calibration",calP:"Sensor thresholds and PID parameters are tuned through practical testing.",
 kBuild:"HOW WE WORK",buildTitle:"Our Journey",buildSub:"From ideas and research to prototypes, testing and continuous improvement.",concept:"Concept",conceptP:"Research the competition, track requirements and robot architecture.",prototype:"Prototype",prototypeP:"Build the chassis, connect sensors and motors, and establish basic line following.",control:"Control",controlP:"Implement and tune PID control for stable tracking.",testingWord:"Testing",testingP:"Run repeated tests on straight lines, corners and curves.",optimization:"Optimization",optimizationP:"Improve traction, speed, weight distribution and software.",competitionWord:"Competition",competitionP:"Final inspection, practice and preparation for TechnoXian World Cup 10.0.",
-kTesting:"WORK IN PROGRESS",testingTitle:"Progress & Results",testingSub:"Follow our development process and explore verified results from our projects.",run:"Run",time:"Time",errors:"Errors",result:"Result",
 kComp:"BEYOND THE BUILD",compSub:"Projects • Events • Competitions • Learning",dateP:"Competition start date.",malaysiaP:"World Cup 10.0 location.",goal:"Goal",goalP:"Complete the course autonomously with accurate and competitive performance.",countdown:"Upcoming Milestones",
 kPrep:"READY CHECK",prep:"Competition Preparation",media:"Build Media",mediaSub:"Add your real project photos and demonstration videos here.",footer:"Built by our team • 2026–2027"
 },
@@ -431,7 +512,6 @@ kTeam:"அணி",ourTeam:"எங்கள் அணி",teamSub:"8 உறுப
 kRobot:"முக்கியப் பணி",ourRobot:"திட்டங்கள் மற்றும் சோதனைகள்",robotSub:"எங்கள் திட்டங்களைப் பாருங்கள். முதன்மைத் திட்டமாக தானியங்கி லைன் ஃபாலோவர் ரோபோ உருவாக்கப்படுகிறது.",photo:"திட்ட ஊடகம்",robotDesc:"கற்றல், சோதனை மற்றும் ரோபோட்டிக்ஸ் போட்டிகளுக்காக உருவாக்கப்படும் தானியங்கி லைன் ஃபாலோவர்.",specs:"திட்ட விவரங்கள்",
 kTech:"எங்கள் திறன்கள்",technology:"திறன்கள் மற்றும் தொழில்நுட்பம்",techSub:"எங்கள் திட்டங்களில் பயன்படுத்தும் கருவிகள், கருத்துகள் மற்றும் தொழில்நுட்பத் துறைகள்.",sensing:"லைன் சென்சிங்",sensingP:"IR சென்சார்கள் பாதையின் நிலையை கண்டறிந்து உடனடி தகவலை வழங்குகின்றன.",pid:"PID கட்டுப்பாடு",pidP:"லைன் பிழையை ஸ்டியரிங் திருத்தமாக PID மாற்றுகிறது.",motor:"மோட்டார் கட்டுப்பாடு",motorP:"மோட்டார் டிரைவர் மூலம் இடது மற்றும் வலது சக்கர வேகம் மாற்றப்படுகிறது.",calibration:"கேலிப்ரேஷன்",calP:"சென்சார் மற்றும் PID மதிப்புகள் நடைமுறை சோதனைகளால் சரிசெய்யப்படும்.",
 kBuild:"எங்கள் செயல்முறை",buildTitle:"எங்கள் பயணம்",buildSub:"யோசனை மற்றும் ஆய்விலிருந்து முன்மாதிரி, சோதனை மற்றும் தொடர்ச்சியான மேம்பாடு வரை.",concept:"கருத்து",conceptP:"போட்டி, பாதை மற்றும் ரோபோ அமைப்பை ஆய்வு செய்தல்.",prototype:"முன்மாதிரி",prototypeP:"சாசிஸ், சென்சார்கள் மற்றும் மோட்டார்களை இணைத்து அடிப்படை லைன் ஃபாலோவரை உருவாக்குதல்.",control:"கட்டுப்பாடு",controlP:"நிலையான இயக்கத்திற்காக PID-ஐ செயல்படுத்தி சரிசெய்தல்.",testingWord:"சோதனை",testingP:"நேரான பாதை, வளைவு மற்றும் மூலைகளில் மீண்டும் மீண்டும் சோதித்தல்.",optimization:"மேம்படுத்தல்",optimizationP:"வேகம், பிடிப்பு, எடை மற்றும் மென்பொருளை மேம்படுத்துதல்.",competitionWord:"போட்டி",competitionP:"இறுதி ஆய்வு, பயிற்சி மற்றும் TechnoXian 10.0 தயாரிப்பு.",
-kTesting:"தொடர்ந்து நடைபெறுகிறது",testingTitle:"முன்னேற்றம் மற்றும் முடிவுகள்",testingSub:"எங்கள் திட்டங்களின் வளர்ச்சி மற்றும் சரிபார்க்கப்பட்ட சோதனை முடிவுகளைப் பாருங்கள்.",run:"சுற்று",time:"நேரம்",errors:"பிழைகள்",result:"முடிவு",
 kComp:"போட்டியைத் தாண்டி",compSub:"திட்டங்கள் • நிகழ்வுகள் • போட்டிகள் • கற்றல்",dateP:"போட்டி தொடங்கும் தேதி.",malaysiaP:"உலகக் கோப்பை 10.0 நடைபெறும் நாடு.",goal:"இலக்கு",goalP:"தானியங்கி முறையில் பாதையை துல்லியமாகவும் வேகமாகவும் முடித்தல்.",countdown:"அடுத்த இலக்குகளுக்கான கவுண்ட்டவுன்",
 kPrep:"தயார்நிலை",prep:"போட்டி தயாரிப்பு",media:"ஊடகம்",mediaSub:"உங்கள் உண்மையான திட்டப் படங்கள் மற்றும் வீடியோக்களை இங்கே சேர்க்கவும்.",footer:"எங்கள் அணியால் உருவாக்கப்பட்டது • இலங்கை"
 }
