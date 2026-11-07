@@ -49,3 +49,13 @@ body.theme-dark .button-light{background:#e9e0d2;color:#282820}
 
 .activity-symbol.activity-logo{width:96px;height:96px;background:#fff;border-radius:0;overflow:hidden;padding:3px}.activity-logo img{display:block;width:100%;height:100%;object-fit:contain}
 @media(max-width:680px){.activity-symbol.activity-logo{width:70px;height:70px}}
+
+/* Make the supplied TMMV EXPO mark clearly visible in the activity card */
+.activity-card{grid-template-columns:210px minmax(0,1fr) 50px;align-items:center}
+.activity-symbol.activity-logo{width:190px;height:112px;min-width:0;border-radius:2px;background:#fff;padding:5px;overflow:hidden}
+.activity-logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+@media(max-width:680px){
+  .activity-card{grid-template-columns:1fr;gap:15px}
+  .activity-symbol.activity-logo{width:min(100%,260px);height:132px}
+  .activity-number{display:none}
+}
