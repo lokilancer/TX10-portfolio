@@ -328,6 +328,69 @@ footer strong{color:var(--accent)}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 
+
+/* Lime identity restored; keep the new editorial/brutalist layout */
+:root{
+ --bg:#101510;--bg2:#192119;--panel:#1b241c;--panel2:#242f24;
+ --text:#f3f5e9;--muted:#a9b3a0;--accent:#c7f36b;--accent2:#c7f36b;
+ --line:#46513e;--shadow:9px 9px 0 #c7f36b22;--nav:rgba(16,21,16,.97);
+}
+[data-theme="dark"]{
+ --bg:#101510;--bg2:#192119;--panel:#1b241c;--panel2:#242f24;
+ --text:#f3f5e9;--muted:#a9b3a0;--accent:#c7f36b;--accent2:#c7f36b;
+ --line:#46513e;--shadow:9px 9px 0 #c7f36b22;--nav:rgba(16,21,16,.97);
+}
+body{background:var(--bg);color:var(--text)}
+nav{background:var(--nav);border-bottom:1px solid var(--line);color:var(--text)}
+.logo,.links a{color:var(--text)}
+.logo span,.section-kicker,.member-number,.section-index{color:var(--accent)}
+.control{border-color:var(--line);color:var(--text)}
+.hero{background:var(--bg);color:var(--text);min-height:88vh;padding:9vw 8%;position:relative}
+.hero:before{content:"COLLECTIVE";position:absolute;right:-4vw;bottom:-4vw;font-size:clamp(110px,21vw,310px);font-weight:1000;letter-spacing:-.1em;white-space:nowrap;color:#c7f36b08;z-index:0}
+.hero-track{opacity:.24;mix-blend-mode:screen}
+.hero-track path{stroke:var(--accent);stroke-width:2.5;stroke-dasharray:3 12}
+.hero-content{max-width:1050px;position:relative;z-index:1}
+.badge{background:var(--accent);color:#101510;border-radius:2px;font-weight:1000}
+h1{font-size:clamp(68px,12vw,164px);line-height:.78;letter-spacing:-.095em;color:var(--text);text-transform:uppercase}
+.gradient{background:none;color:var(--accent);-webkit-text-fill-color:var(--accent)}
+.hero p{color:var(--muted);max-width:540px}
+.cta{background:var(--accent);color:#101510;border:2px solid var(--accent);border-radius:2px;box-shadow:5px 5px 0 #f3f5e933}
+.cta:nth-of-type(2){background:transparent;color:var(--text);border-color:var(--line)}
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stat{border-color:var(--line)}
+.stat b{color:var(--accent)}
+.stat small{color:var(--muted)}
+section{max-width:1600px;padding:115px 8%}
+.section-title{color:var(--text);font-size:clamp(44px,7vw,94px);letter-spacing:-.085em}
+.section-sub{color:var(--muted);max-width:620px}
+.member-grid{grid-template-columns:repeat(4,minmax(0,1fr));border:0;gap:12px}
+.member-card{background:var(--panel);border:1px solid var(--line);min-height:290px;padding:25px;position:relative}
+.member-card:after{content:"";display:block;position:absolute;left:0;bottom:0;width:100%;height:4px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.member-card:hover{background:var(--panel2);color:var(--text);transform:translateY(-5px);border-color:var(--accent)}
+.member-card:hover:after{transform:scaleX(1)}
+.member-card:hover .member-label,.member-card:hover .member-achievement,.member-card:hover .member-number{color:var(--muted)}
+.member-avatar{background:var(--accent);color:#101510;border:0;border-radius:8px;width:48px;height:48px}
+.member-rule{background:var(--line)}
+.member-achievement{color:var(--muted)}
+.robot>.card,.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;box-shadow:none;color:var(--text)}
+.card:hover{border-color:var(--accent);box-shadow:0 10px 35px #0004;transform:translateY(-3px)}
+.placeholder{background:var(--bg2);border:1px dashed var(--line);border-radius:4px}
+.event-grid{border:0;gap:14px}
+.event-card,.event-card.event-featured{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:4px;min-height:340px}
+.event-card.event-featured{background:var(--accent);color:#101510}
+.event-card p{color:var(--muted)}
+.event-card.event-featured p,.event-card.event-featured .event-meta,.event-card.event-featured .event-footer{color:#27321b}
+.event-mark{color:var(--accent)}
+.event-featured .event-mark{color:#101510}
+#countdownCard{border:1px solid var(--line)!important;background:var(--panel)!important;border-radius:4px!important}
+footer{background:#090d09;color:var(--muted);border-top:1px solid var(--line)}
+footer strong{color:var(--accent)}
+#progress{background:var(--accent)}
+#boot{background:#090d09;color:var(--accent)}
+#boot .bar i{background:var(--accent)}
+@media(max-width:900px){.member-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.hero{padding:75px 7%;min-height:720px}.member-grid{grid-template-columns:1fr 1fr}.member-card{padding:17px;min-height:265px}section{padding:80px 7%}}
+
 </style>
 </head>
 <body class="">
@@ -450,16 +513,7 @@ footer strong{color:var(--accent)}
   </div>
 </section>
 
-<section class="reveal in">
-  <div class="section-kicker" data-i18n="kPrep">READY CHECK</div>
-  <h2 class="section-title" data-i18n="prep">Competition Preparation</h2>
-  <div class="checklist">
-    <div class="check">☐ Robot</div><div class="check">☐ Spare motors</div><div class="check">☐ Spare sensors</div>
-    <div class="check">☐ Batteries</div><div class="check">☐ Charger</div><div class="check">☐ USB cables</div>
-    <div class="check">☐ Laptop</div><div class="check">☐ Final firmware</div><div class="check">☐ PID values</div>
-    <div class="check">☐ Circuit diagram</div><div class="check">☐ Team video</div><div class="check">☐ Documentation</div>
-  </div>
-</section>
+
 
 <section class="reveal in">
   <div class="section-kicker">MEDIA</div><h2 class="section-title" data-i18n="media">Build Media</h2>
