@@ -1,70 +1,85 @@
 <div align="center">
 
-# TX10 | Fastest Line Follower
+# TX10 Collective
 
-### Engineering ideas. Building robots. Moving forward.
+### A student team portfolio for projects, people and experiences.
 
-A bilingual English–Tamil portfolio documenting a Sri Lankan student team's robotics journey towards **TechnoXian World Cup 10.0**.
+A bilingual English–Tamil portfolio introducing our team, the work we build, the skills we explore and the events we take part in.
 
 <p>
-  <a href="https://lokilancer.github.io/TX10-portfolio/"><strong>Explore the Portfolio</strong></a> ·
-  <a href="https://github.com/lokilancer/TX10-portfolio"><strong>View Source</strong></a>
+  <a href="https://lokilancer.github.io/TX10-portfolio/"><strong>VISIT THE WEBSITE ↗</strong></a> ·
+  <a href="https://github.com/lokilancer/TX10-portfolio"><strong>VIEW THE SOURCE</strong></a>
 </p>
 
-[![GitHub stars](https://img.shields.io/github/stars/lokilancer/TX10-portfolio?style=for-the-badge&logo=github&label=Star%20this%20project)](https://github.com/lokilancer/TX10-portfolio/stargazers)
-![Languages](https://img.shields.io/badge/Languages-English%20%7C%20Tamil-0f766e?style=for-the-badge)
-![Hosting](https://img.shields.io/badge/Hosted%20on-GitHub%20Pages-181717?style=for-the-badge&logo=github)
+[![GitHub stars](https://img.shields.io/github/stars/lokilancer/TX10-portfolio?style=for-the-badge&logo=github&label=Stars)](https://github.com/lokilancer/TX10-portfolio/stargazers)
+![Languages](https://img.shields.io/badge/Languages-English%20%2B%20Tamil-f04b28?style=for-the-badge)
+![Hosting](https://img.shields.io/badge/Hosting-GitHub%20Pages-171717?style=for-the-badge&logo=github)
 
 </div>
 
 ---
 
-## About the project
+## The team
 
-This portfolio introduces the team's fastest line-follower robotics work and shares its development journey. It is intended as a central place to present team information, project updates and robotics progress in **English and Tamil**.
+TX10 Collective is a student team exploring technology, engineering, robotics and creative problem-solving. This site is our shared space to introduce the people behind the work and document our activities.
 
-## What you'll find
+## What is on the website?
 
-- Team and project introduction
-- Fastest line-follower robotics information
-- Project development and progress updates
-- Bilingual English and Tamil presentation
-- A responsive static website hosted with GitHub Pages
+- **Team** — meet the eight members and see their roles.
+- **Projects** — discover the ideas, builds and experiments we work on.
+- **Technology** — explore the tools and concepts behind our projects.
+- **Our process** — see how ideas move from planning to building and testing.
+- **Events** — a growing record of exhibitions, competitions and team experiences.
+- **English + Tamil** — switch between the two supported languages.
+- **Responsive layout** — designed for desktop, tablet and mobile screens.
 
-## Visit the portfolio
+## Highlights
 
-<div align="center">
+- All eight team members participated in the **T.M.M.V ICT Expo**.
+- **TechnoXian World Cup 10.0** is featured as one of the team's robotics-related projects and experiences.
 
-### [Open the TX10 Portfolio →](https://lokilancer.github.io/TX10-portfolio/)
+## Open the website
 
-</div>
+**[tx10-portfolio — live website](https://lokilancer.github.io/TX10-portfolio/)**
 
-## Run locally
+## Run it locally
 
-The project is a static website. Clone or download this repository and open `index.html` in a modern browser. No application server is required for basic viewing.
+This is a static website. You can run it without installing packages or setting up a server.
 
 ```bash
 git clone https://github.com/lokilancer/TX10-portfolio.git
 cd TX10-portfolio
 ```
 
+Then open `index.html` in a modern web browser.
+
 ## Hosting
 
-The website is configured for GitHub Pages deployment through the workflow in `.github/workflows/pages.yml`.
+The site is published using **GitHub Pages**. The deployment workflow is stored in `.github/workflows/pages.yml`.
 
-## Important project note
+## Project structure
 
-Some website content may be edited or uploaded through browser-side controls. Those changes are stored in that visitor's local browser storage and are not automatically shared with other visitors. Verify robot specifications, performance figures and testing results before presenting them as confirmed results.
+```text
+TX10-portfolio/
+├── .github/
+│   └── workflows/
+│       └── pages.yml
+├── index.html
+└── README.md
+```
 
-## Project links
+The current site keeps its styles and scripts inside `index.html`.
 
-| Resource | Destination |
-|---|---|
-| Live portfolio | [Open website](https://lokilancer.github.io/TX10-portfolio/) |
-| Source repository | [GitHub repository](https://github.com/lokilancer/TX10-portfolio) |
+## Help the project grow
 
-## Support the project
+If you find the team's work interesting, you can support the repository by starring it on GitHub.
 
-If you like the team's work, support the project by starring this repository on GitHub.
+[![Star this repository](https://img.shields.io/badge/STAR%20THE%20PROJECT-★-f04b28?style=for-the-badge)](https://github.com/lokilancer/TX10-portfolio/stargazers)
 
-[![Star on GitHub](https://img.shields.io/badge/⭐%20Star%20this%20repository-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/lokilancer/TX10-portfolio/stargazers)
+---
+
+<div align="center">
+
+**TX10 COLLECTIVE** · Built by the team · Sri Lanka
+
+</div>
