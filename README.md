@@ -12,7 +12,6 @@ A fresh student-team portfolio introducing the members, interests, projects and 
 </p>
 
 ![Hosting](https://img.shields.io/badge/Hosting-GitHub%20Pages-292b23?style=for-the-badge&logo=github)
-![Design](https://img.shields.io/badge/Design-Warm%20Editorial-c45b3e?style=for-the-badge)
 ![Stack](https://img.shields.io/badge/HTML-CSS-JavaScript-777d4b?style=for-the-badge)
 
 </div>
@@ -37,14 +36,6 @@ TMMV Robotics is a student team interested in robotics, engineering, programming
 | Pirarthana | To be assigned |
 
 All eight members participated in the **T.M.M.V ICT Expo**.
-
-## Design
-
-The website uses a warm editorial visual direction with paper, charcoal, terracotta and olive colours. It is a fresh layout rather than a recolour of the earlier page, with an illustrated hero, numbered editorial sections, a team grid, project-interest list and activity feature.
-
-The information architecture takes inspiration from the official PeraBots website while the design and content are independently created for TMMV Robotics:
-
-https://eng.pdn.ac.lk/societies/eees/perabots-2026/
 
 ## Features
 
