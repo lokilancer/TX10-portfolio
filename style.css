@@ -72,3 +72,10 @@ body.theme-dark .button-light{background:#e9e0d2;color:#282820}
 .activity-symbol.activity-logo{width:210px;height:124px;padding:3px}
 .activity-logo img{width:100%;height:100%;object-fit:contain}
 @media(max-width:680px){.activity-symbol.activity-logo{width:min(100%,300px);height:150px}}
+
+
+/* Remove the solid white plates behind the supplied school and Expo marks. */
+.school-crest{background:transparent!important;border-color:transparent!important;padding:0!important}
+.school-crest img{mix-blend-mode:multiply}
+.activity-symbol.activity-logo{background:transparent!important;border:0!important;box-shadow:none;padding:0!important;overflow:visible}
+.activity-logo img{display:block;object-fit:contain;object-position:center;mix-blend-mode:multiply}
